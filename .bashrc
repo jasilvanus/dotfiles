@@ -35,8 +35,6 @@ popj() { popd; }
 ################
 # Tools
 ################
-[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && source ~/.autojump/etc/profile.d/autojump.sh
-
 #################
 # Autocomplete
 #################
@@ -61,6 +59,12 @@ complete -F _complete_hosts ssh
 complete -F _complete_hosts host
 complete -F _complete_hosts ping
 complete -F _complete_hosts vncviewer
+
+if [ ! -z "${DF_AUTOJUMP}" ] && [ -e "${DF_AUTOJUMP}" ]; then
+  . ${DF_AUTOJUMP}
+fi
+#[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && source ~/.autojump/etc/profile.d/autojump.sh
+
 
 # powerline support
 if [ -e ~/.powerline ];
