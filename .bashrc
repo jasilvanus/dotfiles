@@ -71,7 +71,7 @@ then
     BASH_POWERLINE=${POWERLINE_BASE}/bindings/bash/powerline.sh
   fi
 fi
-if [ -e ${BASH_POWERLINE} ]; then
+if [ ! -z "${BASH_POWERLINE}" ] && [ -e ${BASH_POWERLINE} ]; then
   export PATH="${PATH}:${POWERLINE_BASE}/../../../../bin"
   powerline-daemon -q
   POWERLINE_BASH_CONTINUATION=1
