@@ -19,6 +19,7 @@ Plugin 'VundleVim/Vundle.vim'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 " Git plugin not hosted on GitHub
+"
 if v:version >= 705
   Plugin 'https://github.com/Valloric/YouCompleteMe.git'
 endif
