@@ -93,3 +93,7 @@ else
   # no powerline support for bash
   export PS1="\u@\h:\w: "
 fi
+
+# de-dup PATH
+PATH=$(python3 -c 'import os; from collections import OrderedDict; \
+    l=os.environ["PATH"].split(":"); print(":".join(OrderedDict.fromkeys(l)))' )
