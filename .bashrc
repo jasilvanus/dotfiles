@@ -65,12 +65,14 @@ complete -F _complete_hosts vncviewer
 # powerline support
 if [ -e ~/.powerline ];
 then
+  POWERLINE_BASE=$(readlink -f ~/.powerline)
   BASH_POWERLINE=~/.powerline.shs
   if [ ! -e ${BASH_POWERLINE}  ]; then
-    BASH_POWERLINE=~/.powerline/bindings/bash/powerline.sh
+    BASH_POWERLINE=${POWERLINE_BASE}/bindings/bash/powerline.sh
   fi
 fi
 if [ -e ${BASH_POWERLINE} ]; then
+  export PATH="${PATH}:${POWERLINE_BASE}/../../../../bin"
   powerline-daemon -q
   POWERLINE_BASH_CONTINUATION=1
   POWERLINE_BASH_SELECT=1
