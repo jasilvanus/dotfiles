@@ -35,10 +35,8 @@ popj() { popd; }
 ################
 # Tools
 ################
-#################
-# Autocomplete
-#################
 
+# Autocomplete
 # Autocomplete Hostnames for SSH etc.
 # by Jean-Sebastien Morisset (http://surniaulula.com/)
 _complete_hosts () {
@@ -60,6 +58,10 @@ complete -F _complete_hosts host
 complete -F _complete_hosts ping
 complete -F _complete_hosts vncviewer
 
+# dircolors
+eval `dircolors ~/.dir_colors`
+
+# autojump support
 if [ ! -z "${DF_AUTOJUMP}" ] && [ -e "${DF_AUTOJUMP}" ]; then
   . ${DF_AUTOJUMP}
 fi
