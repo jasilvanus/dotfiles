@@ -23,6 +23,7 @@
    ff = only
    rebase = true
    recurse = true
+   recurseSubmodules = yes
 
 [pager]
    log = diff-highlight | less
