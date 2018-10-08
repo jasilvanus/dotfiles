@@ -52,7 +52,7 @@ filetype plugin indent on    " required
 " non-vundle plugins
 let g:powerline_pycmd="py3"
 :set laststatus=2
-set rtp+=/usr/lib/python3.6/site-packages/powerline/bindings/vim
+set rtp+=~/.powerline/bindings/vim
 "
 " remaining config
 set mouse=
@@ -84,5 +84,6 @@ command SaveMake :update <bar> :Make
 :imap <F8> <ESC>:SaveMake<CR>
 
 " color profile
-set background=light
-colorscheme solarized
+"set background=light
+"set background=dark
+"colorscheme solarized
