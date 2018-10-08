@@ -1,0 +1,3 @@
+# this file showcases how to use the provided .gitconfig
+[include]
+	path = ~/misc/dotfiles/.gitconfig
