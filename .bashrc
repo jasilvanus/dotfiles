@@ -67,16 +67,15 @@ fi
 
 
 # powerline support
-if [ -e ~/.powerline ];
-then
-  POWERLINE_BASE=$(readlink -f ~/.powerline)
-  BASH_POWERLINE=~/.powerline.sh
-  if [ ! -e ${BASH_POWERLINE}  ]; then
-    BASH_POWERLINE=${POWERLINE_BASE}/bindings/bash/powerline.sh
+if [ ! -z "${DF_POWERLINE}" ] && [ -e "${DF_POWERLINE}" ]; then
+  if [ ! -z "${DF_POWERLINE_BASH}" ]; then
+    BASH_POWERLINE=${DF_POWERLINE_BASH}
+  else
+    BASH_POWERLINE=${DF_POWERLINE}/bindings/bash/powerline.sh
   fi
 fi
 if [ ! -z "${BASH_POWERLINE}" ] && [ -e ${BASH_POWERLINE} ]; then
-  export PATH="${PATH}:${POWERLINE_BASE}/../../../../bin"
+  export PATH="${PATH}:${DF_POWERLINE}/../../../../bin"
   powerline-daemon -q
   POWERLINE_BASH_CONTINUATION=1
   POWERLINE_BASH_SELECT=1
