@@ -1,0 +1,46 @@
+[push]
+	default = current
+	recurseSubmodules = on-demand
+[diff]
+	tool = meld
+[difftool]
+	prompt = false
+[merge]
+        tool = mymeld
+        conflictstyle = diff3
+[mergetool "mymeld"]
+        cmd = meld $LOCAL $BASE $REMOTE -o $MERGED --auto-merge
+
+[alias]
+   co = checkout
+   last-commit = !git --no-pager log -n 1 --pretty=format:"%H%n" --
+   merge-ff = merge --ff-only
+   rbi = rebase -i --autosquash --autostash
+   root = rev-parse --show-toplevel
+   s = status
+
+[pull]
+   ff = only
+   rebase = true
+
+[pager]
+   log = diff-highlight | less
+   show = diff-highlight | less
+   diff = diff-highlight | less
+
+[color]
+	ui = auto
+[color "diff"]
+	frag = cyan
+	new = green
+	commit = yellow
+[color "branch"]
+	current = green
+[color "status"]
+	updated = green
+
+[color "decorate"]
+        tag = green
+
+[core]
+	excludesfile = ~/.gitignore_global
