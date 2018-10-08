@@ -1,3 +1,10 @@
+if [ ! -z "${SOURCED_DOT_BASHRC}" ]; then
+  return
+fi
+SOURCED_DOT_BASHRC=1
+
+source ~/.profile
+
 #################
 # Aliases
 #################
