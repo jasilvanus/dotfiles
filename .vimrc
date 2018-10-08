@@ -19,7 +19,9 @@ Plugin 'VundleVim/Vundle.vim'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 " Git plugin not hosted on GitHub
-Plugin 'https://github.com/Valloric/YouCompleteMe.git'
+if v:version >= 705
+  Plugin 'https://github.com/Valloric/YouCompleteMe.git'
+endif
 Plugin 'Command-T'
 " git repos on your local machine (i.e. when working on your own plugin)
 " Plugin 'file:///home/gmarik/path/to/plugin'
