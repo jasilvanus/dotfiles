@@ -26,9 +26,9 @@
    recurseSubmodules = yes
 
 [pager]
-   log = diff-highlight | less
-   show = diff-highlight | less
-   diff = diff-highlight | less
+   log  = ~/bin/diff-highlight | less
+   show = ~/bin/diff-highlight | less
+   diff = ~/bin/diff-highlight | less
 
 [color]
 	ui = auto
