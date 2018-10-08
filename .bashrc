@@ -61,3 +61,21 @@ complete -F _complete_hosts ssh
 complete -F _complete_hosts host
 complete -F _complete_hosts ping
 complete -F _complete_hosts vncviewer
+
+# powerline support
+if [ -e ~/.powerline ];
+then
+  BASH_POWERLINE=~/.powerline.shs
+  if [ ! -e ${BASH_POWERLINE}  ]; then
+    BASH_POWERLINE=~/.powerline/bindings/bash/powerline.sh
+  fi
+fi
+if [ -e ${BASH_POWERLINE} ]; then
+  powerline-daemon -q
+  POWERLINE_BASH_CONTINUATION=1
+  POWERLINE_BASH_SELECT=1
+  . ${BASH_POWERLINE}
+else
+  # no powerline support for bash
+  export PS1="\[$(ppwd)\]\u@\h:\w>"
+fi
