@@ -79,5 +79,5 @@ if [ ! -z "${BASH_POWERLINE}" ] && [ -e ${BASH_POWERLINE} ]; then
   . ${BASH_POWERLINE}
 else
   # no powerline support for bash
-  export PS1="\[$(ppwd)\]\u@\h:\w>"
+  export PS1="\u@\h:\w: "
 fi
