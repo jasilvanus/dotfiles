@@ -66,7 +66,7 @@ complete -F _complete_hosts vncviewer
 if [ -e ~/.powerline ];
 then
   POWERLINE_BASE=$(readlink -f ~/.powerline)
-  BASH_POWERLINE=~/.powerline.shs
+  BASH_POWERLINE=~/.powerline.sh
   if [ ! -e ${BASH_POWERLINE}  ]; then
     BASH_POWERLINE=${POWERLINE_BASE}/bindings/bash/powerline.sh
   fi
