@@ -10,13 +10,6 @@
 				}
 			},
 			{
-				"function": "powerline.segments.common.env.user",
-				"priority": 30,
-				"args": {
-					"hide_user": "silvanus"
-				}
-			},
-			{
 				"function": "powerline.segments.common.time.date",
 				"name": "time",
 				"args": {
