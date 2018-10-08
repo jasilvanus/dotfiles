@@ -83,6 +83,12 @@ command SaveMake :update <bar> :Make
 :map <F8> :SaveMake<CR>
 :imap <F8> <ESC>:SaveMake<CR>
 
+" faster pane navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 " color profile
 "set background=light
 "set background=dark
