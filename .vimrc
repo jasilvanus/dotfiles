@@ -93,6 +93,23 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" tab navigation
+map <ESC>1 1gt
+map <ESC>2 2gt
+map <ESC>3 3gt
+map <ESC>4 4gt
+map <ESC>5 5gt
+map <ESC>6 6gt
+map <ESC>7 7gt
+map <ESC>8 8gt
+map <ESC>9 9gt
+map <C-n> :tabn<CR>
+map <C-p> :tabp<CR>
+
+" tab control
+map <C-w> :tabclose<CR>
+
+
 " color profile
 set background=light
 colorscheme solarized
