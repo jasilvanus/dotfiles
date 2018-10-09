@@ -76,6 +76,12 @@ fi
 
 
 # powerline support
+if [ -z "${DF_POWERLINE}" ] && [ -e ~/.powerline ]; then
+  DF_POWERLINE=~/.powerline
+fi
+if [ -z "${DF_POWERLINE_BASH}" ] && [ -e ~/.powerline.sh ]; then
+  DF_POWERLINE_BASH=~/.powerline.sh
+fi
 if [ ! -z "${DF_POWERLINE}" ] && [ -e "${DF_POWERLINE}" ]; then
   if [ ! -z "${DF_POWERLINE_BASH}" ]; then
     BASH_POWERLINE=${DF_POWERLINE_BASH}
