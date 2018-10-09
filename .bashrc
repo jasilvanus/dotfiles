@@ -69,11 +69,12 @@ complete -F _complete_hosts vncviewer
 eval `dircolors ~/.dir_colors`
 
 # autojump support
+if [ -z "${DF_AUTOJUMP}" ] && [ -e ~/.autojump.sh ]; then
+  DF_AUTOJUMP=~/.autojump.sh
+fi
 if [ ! -z "${DF_AUTOJUMP}" ] && [ -e "${DF_AUTOJUMP}" ]; then
   . ${DF_AUTOJUMP}
 fi
-#[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && source ~/.autojump/etc/profile.d/autojump.sh
-
 
 # powerline support
 if [ -z "${DF_POWERLINE}" ] && [ -e ~/.powerline ]; then
