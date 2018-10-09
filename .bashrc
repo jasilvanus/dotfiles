@@ -101,6 +101,6 @@ else
   export PS1="\u@\h:\w: "
 fi
 
-# de-dup PATH
+# de-dup PATH. Note: OrderedDict preserves input order.
 PATH=$(python3 -c 'import os; from collections import OrderedDict; \
     l=os.environ["PATH"].split(":"); print(":".join(OrderedDict.fromkeys(l)))' )
