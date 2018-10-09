@@ -63,6 +63,9 @@ set expandtab
 
 " filetype based configs
 autocmd FileType tex setlocal shiftwidth=1 tabstop=1 expandtab
+autocmd FileType make setlocal noexpandtab
+" hack: vim detects Make.{local,config} as conf file
+autocmd FileType conf setlocal noexpandtab
 
 " trailing whitespace handling
 :highlight ExtraWhitespace ctermbg=red guibg=red
