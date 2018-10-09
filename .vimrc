@@ -60,6 +60,7 @@ set number
 set hlsearch
 set tabstop=3
 set expandtab
+syntax on
 
 " filetype based configs
 autocmd FileType tex setlocal shiftwidth=1 tabstop=1 expandtab
