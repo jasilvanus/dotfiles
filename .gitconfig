@@ -30,6 +30,9 @@
    show = ~/bin/diff-highlight | less
    diff = ~/bin/diff-highlight | less
 
+[submodule]
+  recurse = true
+
 [color]
 	ui = auto
 [color "diff"]
