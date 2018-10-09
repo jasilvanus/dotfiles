@@ -7,6 +7,7 @@ source ~/.profile
 
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/janniks/.zshrc'
+zstyle ':completion:*' menu select
 
 autoload -Uz compinit
 compinit
