@@ -1,7 +1,7 @@
 {
     "ext": {
         "shell": {
-            "theme": "my_leftonly"
+            "theme": "my_default"
         }
     }
 }
