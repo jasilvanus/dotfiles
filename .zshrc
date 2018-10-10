@@ -22,6 +22,12 @@ setopt autocd
 bindkey -e
 
 # End of lines configured by zsh-newuser-install
+
+# custom hotkeys
+# use ctrl+arrow to navigate words
+bindkey "^[[1;5D" backward-word
+bindkey "^[[1;5C" forward-word
+
 #################
 # Aliases
 #################
