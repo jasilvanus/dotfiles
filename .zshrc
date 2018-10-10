@@ -3,10 +3,12 @@ if [ ! -z "${SOURCED_DOT_ZSHRC}" ]; then
 fi
 SOURCED_DOT_ZSHRC=1
 
-source ~/.profile
+if [ -z "${SOURCED_DOT_PROFILE}" ]; then
+   source ~/.profile
+fi
 
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/janniks/.zshrc'
+zstyle :compinstall filename '~/.zshrc'
 zstyle ':completion:*' menu select
 
 autoload -Uz compinit
@@ -62,8 +64,8 @@ popj() { popd; }
 eval `dircolors ~/.dir_colors`
 
 # autojump support
-if [ -z "${DF_AUTOJUMP}" ] && [ -e ~/.autojump ]; then
-  DF_AUTOJUMP=~/.autojump
+if [ -z "${DF_AUTOJUMP}" ] && [ -e ~/.autojump-shell-base ]; then
+  DF_AUTOJUMP=~/.autojump-shell-base
   ZSH_AUTOJUMP=${DF_AUTOJUMP}/autojump.zsh
 fi
 if [ ! -z "${ZSH_AUTOJUMP}" ] && [ -e "${ZSH_AUTOJUMP}" ]; then
