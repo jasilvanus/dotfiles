@@ -28,6 +28,14 @@ bindkey -e
 bindkey "^[[1;5D" backward-word
 bindkey "^[[1;5C" forward-word
 
+# bind alt-backspace to delete-word-until-non-alpha
+backward-kill-dir () {
+   local WORDCHARS=${WORDCHARS/\/}
+   zle backward-kill-word
+}
+zle -N backward-kill-dir
+bindkey '^[^?' backward-kill-dir
+
 #################
 # Aliases
 #################
