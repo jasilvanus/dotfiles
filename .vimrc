@@ -62,6 +62,9 @@ set tabstop=3
 set expandtab
 syntax on
 
+" for some vim versions, this is required to be able to backspace across lines
+set backspace=indent,eol,start
+
 " filetype based configs
 autocmd FileType tex setlocal shiftwidth=1 tabstop=1 expandtab
 autocmd FileType make setlocal noexpandtab
