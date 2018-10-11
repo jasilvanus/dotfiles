@@ -24,6 +24,8 @@ if v:version >= 705
   Plugin 'https://github.com/Valloric/YouCompleteMe.git'
 endif
 Plugin 'Command-T'
+Plugin 'ultisnips'
+Plugin 'https://github.com/honza/vim-snippets'
 " git repos on your local machine (i.e. when working on your own plugin)
 " Plugin 'file:///home/gmarik/path/to/plugin'
 
@@ -83,6 +85,12 @@ fun! <SID>StripTrailingWhitespaces()
 endfun
 
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+
+" snippets config
+let g:UltiSnipsUsePythonVersion = 3
+let g:UltiSnipsExpandTrigger="<c-f>"
+let g:UltiSnipsJumpForwardTrigger="<c-x>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " hotkeys
 command Make !make
