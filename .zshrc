@@ -28,6 +28,20 @@ bindkey -e
 bindkey "^[[1;5D" backward-word
 bindkey "^[[1;5C" forward-word
 
+# bind alt-arrow to move-word-until-non-alpha
+backward-dir () {
+   local WORDCHARS=${WORDCHARS/\/}
+   zle backward-word
+}
+zle -N backward-dir
+bindkey "^[[1;3D" backward-dir
+forward-dir () {
+   local WORDCHARS=${WORDCHARS/\/}
+   zle forward-word
+}
+zle -N forward-dir
+bindkey "^[[1;3C" forward-dir
+
 # bind alt-backspace to delete-word-until-non-alpha
 backward-kill-dir () {
    local WORDCHARS=${WORDCHARS/\/}
