@@ -62,7 +62,6 @@ alias bc='bc -l'
 alias less='less -S'
 alias glances='glances --theme-white'
 alias ..='cd ..'
-alias make='make -j -l 1'
 alias g='git'
 
 #################

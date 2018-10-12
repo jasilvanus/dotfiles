@@ -8,3 +8,4 @@ export VISUAL=${EDITOR}
 export LANG=en_US.UTF-8
 export GREP_COLORS=""
 export PATH="~/bin:${PATH}"
+export MAKEFLAGS="-j -l 1"
