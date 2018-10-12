@@ -1,5 +1,11 @@
+" YouCompleteMe config
 let g:ycm_global_ycm_extra_conf = '$HOME/.vim/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
+
+" command-T config
+let g:CommandTFileScanner = "git"
+
+" vundle prep
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -23,7 +29,7 @@ Plugin 'VundleVim/Vundle.vim'
 if v:version >= 705
   Plugin 'https://github.com/Valloric/YouCompleteMe.git'
 endif
-Plugin 'Command-T'
+Plugin 'wincent/command-t'
 Plugin 'ultisnips'
 Plugin 'https://github.com/honza/vim-snippets'
 " git repos on your local machine (i.e. when working on your own plugin)
