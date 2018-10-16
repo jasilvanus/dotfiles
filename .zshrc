@@ -53,16 +53,16 @@ bindkey '^[^?' backward-kill-dir
 #################
 # Aliases
 #################
-alias time='/usr/bin/time'
-alias open='xdg-open'
-alias ls='ls --color=auto'
-alias lr='ls -latrh'
-alias lt='ls -tr'
-alias bc='bc -l'
-alias less='less -S'
-alias glances='glances --theme-white'
 alias ..='cd ..'
+alias bc='bc -l'
 alias g='git'
+alias glances='glances --theme-white'
+alias less='less -S'
+alias lr='ls -latrh'
+alias ls='ls --color=auto'
+alias lt='ls -tr'
+alias open='xdg-open'
+alias time='/usr/bin/time'
 
 #################
 # Functions
