@@ -14,6 +14,7 @@ Plug 'autozimu/LanguageClient-neovim', {
 " (Optional) Multi-entry selection UI.
 Plug 'junegunn/fzf'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'vim-scripts/a.vim'
 
 call plug#end()
 
@@ -94,6 +95,11 @@ command SaveMake :update <bar> :Make
 :imap <F1> <ESC>:nohls<CR>
 :map <F8> :SaveMake<CR>
 :imap <F8> <ESC>:SaveMake<CR>
+
+" alternate header / source file
+:map <C-c> :A<CR>
+:map <C-S-c> :AT<CR>
+:imap <C-c> <ESC>:A<CR>
 
 " faster pane navigation
 nnoremap <C-J> <C-W><C-J>
