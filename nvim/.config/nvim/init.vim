@@ -32,7 +32,7 @@ call deoplete#custom#option('auto_complete_delay', 5)
 
 " languageclient cfg
 let g:LanguageClient_serverCommands = {
-    \ 'cpp': ['clangd'],
+    \ 'cpp': ['cquery', '--log-file=/tmp/cq.log', '--init={"cacheDirectory":"/var/cquery/"}'],
     \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
     \ 'python': ['pyls'],
     \ }
