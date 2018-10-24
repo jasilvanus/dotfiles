@@ -1,1 +1,1 @@
-/home/silvanus/misc/solarized/vim-colors-solarized/colors/solarized.vim
+../../../../solarized-colors/vim-colors-solarized/colors/solarized.vim
