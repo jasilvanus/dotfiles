@@ -3,7 +3,7 @@ if [ ! -z "${SOURCED_DOT_PROFILE}" ]; then
 fi
 SOURCED_DOT_PROFILE=1
 
-export EDITOR=/usr/bin/vim
+export EDITOR=nvim
 export VISUAL=${EDITOR}
 export LANG=en_US.UTF-8
 export GREP_COLORS=""
