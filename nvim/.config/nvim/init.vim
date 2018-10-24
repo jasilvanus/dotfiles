@@ -84,6 +84,11 @@ let g:NERDTrimTrailingWhitespace = 1
 " Enable NERDCommenterToggle to check all selected lines is commented or not
 let g:NERDToggleCheckAllLines = 1
 
+" a.vim config: alternate header / source file
+:map <C-c> :A<CR>
+:map <C-S-c> :AT<CR>
+:imap <C-c> <ESC>:A<CR>
+
 " remaining config
 set mouse=
 set number
@@ -127,11 +132,6 @@ command SaveMake :update <bar> :Make
 :imap <F1> <ESC>:nohls<CR>
 :map <F8> :SaveMake<CR>
 :imap <F8> <ESC>:SaveMake<CR>
-
-" alternate header / source file
-:map <C-c> :A<CR>
-:map <C-S-c> :AT<CR>
-:imap <C-c> <ESC>:A<CR>
 
 " faster pane navigation
 nnoremap <C-J> <C-W><C-J>
