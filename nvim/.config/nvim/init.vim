@@ -106,7 +106,8 @@ autocmd FileType make setlocal noexpandtab
 " hack: vim detects Make.{local,config} as conf file
 autocmd FileType conf setlocal noexpandtab
 " for cpp, always show signcolumn to avoid jumping horizontal layout if errors
-autocmd FileType cpp setlocal signcolumn=yes syntax=cpp.doxygen cino=(3
+autocmd FileType cpp setlocal signcolumn=yes syntax=cpp.doxygen
+         \ cino=(3 fdm=syntax foldlevel=20
 autocmd Filetype c,cpp set comments^=:///
 
 " trailing whitespace handling
