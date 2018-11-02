@@ -1,8 +1,3 @@
-if [ ! -z "${SOURCED_DOT_ZSHRC}" ]; then
-  return
-fi
-SOURCED_DOT_ZSHRC=1
-
 if [ -z "${SOURCED_DOT_PROFILE}" ]; then
    source ~/.profile
 fi
