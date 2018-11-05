@@ -94,6 +94,7 @@ let g:NERDToggleCheckAllLines = 1
 " remaining config
 set mouse=
 set number
+set relativenumber
 set hlsearch
 set tabstop=3
 set sw=3
