@@ -13,6 +13,8 @@ Plug 'autozimu/LanguageClient-neovim', {
 
 " (Optional) Multi-entry selection UI.
 Plug 'junegunn/fzf'
+Plug 'lyuts/vim-rtags'
+Plug 'rzaluska/deoplete-rtags'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'vim-scripts/a.vim'
 Plug 't9md/vim-quickhl'
@@ -31,8 +33,8 @@ inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 call deoplete#custom#option('auto_complete_delay', 5)
 
 " languageclient cfg
+    " \ 'cpp': ['cquery', '--log-file=/tmp/cq.log', '--init={"cacheDirectory":"/var/cquery/"}'],
 let g:LanguageClient_serverCommands = {
-    \ 'cpp': ['cquery', '--log-file=/tmp/cq.log', '--init={"cacheDirectory":"/var/cquery/"}'],
     \ 'c': ['cquery', '--log-file=/tmp/cq.log', '--init={"cacheDirectory":"/var/cquery/"}'],
     \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
     \ 'python': ['pyls'],
