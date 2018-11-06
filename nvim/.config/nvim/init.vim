@@ -130,7 +130,7 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 autocmd BufReadPost * if @% !~# '\.git[\/\\]COMMIT_EDITMSG$' && line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
 " hotkeys
-command SaveMake :update <bar> :make
+command SaveMake :wa <bar> :make
 :map <F1> :nohls<CR>
 :imap <F1> <ESC>:nohls<CR>
 :map <F8> :SaveMake<CR>
