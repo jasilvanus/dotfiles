@@ -9,12 +9,13 @@ Plug 'honza/vim-snippets'
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
+    \ 'for': 'python'
     \ }
 
 " (Optional) Multi-entry selection UI.
 Plug 'junegunn/fzf'
-Plug 'lyuts/vim-rtags'
-Plug 'rzaluska/deoplete-rtags'
+Plug 'lyuts/vim-rtags', { 'for': 'cpp' }
+Plug 'rzaluska/deoplete-rtags', { 'for': 'cpp' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'vim-scripts/a.vim'
 Plug 't9md/vim-quickhl'
