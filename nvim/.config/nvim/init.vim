@@ -20,6 +20,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'vim-scripts/a.vim'
 Plug 't9md/vim-quickhl'
 Plug 'scrooloose/nerdcommenter'
+Plug 'zivyangll/git-blame.vim'
 
 call plug#end()
 
