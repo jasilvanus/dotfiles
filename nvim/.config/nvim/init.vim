@@ -21,6 +21,7 @@ Plug 'vim-scripts/a.vim'
 Plug 't9md/vim-quickhl'
 Plug 'scrooloose/nerdcommenter'
 Plug 'zivyangll/git-blame.vim'
+Plug 'neomake/neomake'
 
 call plug#end()
 
@@ -133,8 +134,11 @@ autocmd BufReadPost * if @% !~# '\.git[\/\\]COMMIT_EDITMSG$' && line("'\"") > 1 
 
 " hotkeys
 command SaveMake :wa <bar> :make
+command SaveNeomake :wa <bar> :Neomake!
 :map <F1> :nohls<CR>
 :imap <F1> <ESC>:nohls<CR>
+:map <F5> :SaveNeomake<CR>
+:imap <F5> <ESC>:SaveNeomake<CR>
 :map <F8> :SaveMake<CR>
 :imap <F8> <ESC>:SaveMake<CR>
 
