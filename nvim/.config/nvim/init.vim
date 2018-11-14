@@ -143,6 +143,9 @@ command SaveNeomake :wa <bar> :Neomake!
 :map <F8> :SaveMake<CR>
 :imap <F8> <ESC>:SaveMake<CR>
 
+" In visual mode, // searches for previous matches of the highlighted text
+vnoremap // y/<C-R>"<CR>
+
 " faster pane navigation
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
