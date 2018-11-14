@@ -107,6 +107,7 @@ syntax on
 
 " filetype based configs
 autocmd FileType tex setlocal shiftwidth=1 tabstop=1 expandtab
+let g:tex_flavor = "latex"
 autocmd FileType json setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType make setlocal noexpandtab
 " hack: vim detects Make.{local,config} as conf file
