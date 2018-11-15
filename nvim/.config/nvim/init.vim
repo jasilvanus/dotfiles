@@ -103,6 +103,7 @@ set tabstop=3
 set sw=3
 set expandtab
 set cursorline
+set autoread
 syntax on
 
 " filetype based configs
@@ -116,6 +117,9 @@ autocmd FileType conf setlocal noexpandtab
 autocmd FileType cpp setlocal signcolumn=yes syntax=cpp.doxygen
          \ cino=(3 fdm=syntax foldlevel=20
 autocmd Filetype c,cpp set comments^=:///
+
+" auto-refresh details
+au CursorHold,CursorHoldI,FocusGained,BufEnter * checktime
 
 " trailing whitespace handling
 :highlight ExtraWhitespace ctermbg=red guibg=red
