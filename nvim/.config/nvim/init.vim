@@ -54,6 +54,7 @@ let g:airline_theme = "solarized"
 
 " command-T config
 let g:CommandTFileScanner = "git"
+let g:CommandTGitIncludeUntracked = 1
 
 " snippets config
 let g:UltiSnipsUsePythonVersion = 3
