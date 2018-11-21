@@ -109,6 +109,8 @@ syntax on
 
 " filetype based configs
 autocmd FileType tex setlocal shiftwidth=1 tabstop=1 expandtab
+" consider : to be part of words for label autocomplete
+autocmd FileType tex set iskeyword+=:
 let g:tex_flavor = "latex"
 autocmd FileType json setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType make setlocal noexpandtab
