@@ -43,7 +43,7 @@ let g:LanguageClient_serverCommands = {
     \ 'python': ['pyls'],
     \ }
 
-nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+" nnoremap <F5> :call LanguageClient_contextMenu()<CR>
 
 " airline config
 let g:airline_theme = "solarized"
