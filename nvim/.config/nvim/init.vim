@@ -96,7 +96,7 @@ let g:NERDToggleCheckAllLines = 1
 :imap <C-c> <ESC>:A<CR>
 
 " remaining config
-set mouse=
+set mouse=a
 set number
 set relativenumber
 set hlsearch
@@ -165,6 +165,12 @@ map <C-p> :tabp<CR>
 
 " tab control
 map <C-w> :tabclose<CR>
+
+" mouse scrolling: scroll page instead of cursor
+:map <ScrollWheelUp> <C-Y>
+:map <S-ScrollWheelUp> <C-U>
+:map <ScrollWheelDown> <C-E>
+:map <S-ScrollWheelDown> <C-D>
 
 " color profile
 set background=light
