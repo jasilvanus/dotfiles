@@ -22,6 +22,7 @@ Plug 't9md/vim-quickhl'
 Plug 'scrooloose/nerdcommenter'
 Plug 'zivyangll/git-blame.vim'
 Plug 'neomake/neomake'
+Plug 'SailorCrane/vim-swap-string'
 
 call plug#end()
 
