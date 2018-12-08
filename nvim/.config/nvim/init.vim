@@ -151,6 +151,18 @@ command SaveNeomake :wa <bar> :Neomake!
 :map <F8> :SaveMake<CR>
 :imap <F8> <ESC>:SaveMake<CR>
 
+" Copy to clipboard
+vnoremap  <leader>y  "+y
+nnoremap  <leader>Y  "+yg_
+nnoremap  <leader>y  "+y
+nnoremap  <leader>yy  "+yy
+
+" Paste from clipboard
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
+vnoremap <leader>p "+p
+vnoremap <leader>P "+P
+
 " In visual mode, // searches for previous matches of the highlighted text
 vnoremap // y/<C-R>"<CR>
 
