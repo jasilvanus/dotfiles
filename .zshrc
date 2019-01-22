@@ -17,7 +17,7 @@ if [ "$(larger_version ${ZSH_VERSION} 5)" = "5" ]
 then
    export PS1="\u@\h:\w: "
    echo "Old zsh detected, using fallback config!"
-   exit
+   return
 fi
 
 # The following lines were added by compinstall
