@@ -3,7 +3,6 @@ call plug#begin('~/.nvim/plugged')
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'wincent/command-t'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'autozimu/LanguageClient-neovim', {
@@ -13,7 +12,8 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ }
 
 " (Optional) Multi-entry selection UI.
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'lyuts/vim-rtags', { 'for': 'cpp' }
 Plug 'rzaluska/deoplete-rtags', { 'for': 'cpp' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -23,8 +23,14 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'zivyangll/git-blame.vim'
 Plug 'neomake/neomake'
 Plug 'SailorCrane/vim-swap-string'
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
+
+" fzf config
+nnoremap <leader>h :History<CR>
+nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>t :Files<CR>
 
 " lang server config
 " Required for operations modifying multiple buffers like rename.
@@ -52,10 +58,6 @@ let g:airline_theme = "solarized"
 " YouCompleteMe config
 "let g:ycm_global_ycm_extra_conf = '$HOME/.vim/.ycm_extra_conf.py'
 "let g:ycm_confirm_extra_conf = 0
-
-" command-T config
-let g:CommandTFileScanner = "git"
-let g:CommandTGitIncludeUntracked = 1
 
 " snippets config
 let g:UltiSnipsUsePythonVersion = 3
