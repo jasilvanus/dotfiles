@@ -2,6 +2,24 @@ if [ -z "${SOURCED_DOT_PROFILE}" ]; then
    source ~/.profile
 fi
 
+
+# low level version compare, used to check if we skip most of this for old zshs
+# returns whether the first arg is a larger or equal compared to second version
+# relies on sort -V
+larger_version() {
+   echo "
+${1}
+${2}
+" | sort -V | tail -1
+}
+
+if [ "$(larger_version ${ZSH_VERSION} 5)" = "5" ]
+then
+   export PS1="\u@\h:\w: "
+   echo "Old zsh detected, using fallback config!"
+   exit
+fi
+
 # The following lines were added by compinstall
 zstyle :compinstall filename '~/.zshrc'
 zstyle ':completion:*' menu select
