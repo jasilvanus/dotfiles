@@ -15,7 +15,7 @@ ${2}
 
 if [ "$(larger_version ${ZSH_VERSION} 5)" = "5" ]
 then
-   export PS1="\u@\h:\w: "
+   export PS1='%F%B%n%f@%m %F%~: %f%b'
    echo "Old zsh detected, using fallback config!"
    return
 fi
