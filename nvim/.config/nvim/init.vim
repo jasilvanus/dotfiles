@@ -8,8 +8,8 @@ Plug 'honza/vim-snippets'
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
-    \ 'for': 'python'
     \ }
+    " \ 'for': 'python'
 
 " (Optional) Multi-entry selection UI.
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -21,7 +21,9 @@ Plug 'vim-scripts/a.vim'
 Plug 't9md/vim-quickhl'
 Plug 'scrooloose/nerdcommenter'
 Plug 'zivyangll/git-blame.vim'
-Plug 'neomake/neomake'
+Plug 'neomake/neomake', {
+    \ 'for': 'tex'
+    \ }
 Plug 'SailorCrane/vim-swap-string'
 Plug 'tpope/vim-fugitive'
 
@@ -50,14 +52,14 @@ inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 call deoplete#custom#option('auto_complete_delay', 5)
 
 " languageclient cfg
-    " \ 'cpp': ['cquery', '--log-file=/tmp/cq.log', '--init={"cacheDirectory":"/var/cquery/"}'],
 let g:LanguageClient_serverCommands = {
+    \ 'cpp': ['cquery', '--log-file=/tmp/cq.log', '--init={"cacheDirectory":"/var/cquery/"}'],
     \ 'c': ['cquery', '--log-file=/tmp/cq.log', '--init={"cacheDirectory":"/var/cquery/"}'],
     \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
     \ 'python': ['pyls'],
     \ }
 
-" nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+nnoremap <F4> :call LanguageClient_contextMenu()<CR>
 
 " airline config
 let g:airline_theme = "solarized"
