@@ -35,7 +35,7 @@ nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>t :Files<CR>
 
 let g:fzf_action = {
-  \ 'ctrl-t': 'drop',
+  \ 'ctrl-t': 'tab split',
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
 
