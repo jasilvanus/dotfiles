@@ -58,11 +58,18 @@ call deoplete#custom#option('auto_complete_delay', 5)
 
 " languageclient cfg
 let g:LanguageClient_serverCommands = {
-    \ 'cpp': ['cquery', '--log-file=/tmp/cq.log', '--init={"cacheDirectory":"/var/cquery/"}'],
-    \ 'c': ['cquery', '--log-file=/tmp/cq.log', '--init={"cacheDirectory":"/var/cquery/"}'],
+    \ 'cpp': ['cquery', '--log-file=/tmp/cq.log', '--init={"cacheDirectory":".cquery-cache/"}'],
+    \ 'c': ['cquery', '--log-file=/tmp/cq.log', '--init={"cacheDirectory":".cquery-cache/"}'],
     \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
     \ 'python': ['pyls'],
     \ }
+
+    " \ 'cpp': ['ccls', '-log-file=/tmp/ccls.log'],
+    " \ 'c': ['ccls'],
+    " \ 'cpp': ['cquery', '--log-file=/tmp/cq.log', '--init={"cacheDirectory":".cquery-cache/"}'],
+    " \ 'c': ['cquery', '--log-file=/tmp/cq.log', '--init={"cacheDirectory":".cquery-cache/"}'],
+    " \ 'cpp': ['clangd'],
+    " \ 'c': ['clangd'],
 
 nnoremap <F4> :call LanguageClient_contextMenu()<CR>
 
