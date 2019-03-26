@@ -75,6 +75,7 @@ nnoremap <F4> :call LanguageClient_contextMenu()<CR>
 
 " airline config
 let g:airline_theme = "solarized"
+let g:airline_powerline_fonts = 1
 
 " YouCompleteMe config
 "let g:ycm_global_ycm_extra_conf = '$HOME/.vim/.ycm_extra_conf.py'
