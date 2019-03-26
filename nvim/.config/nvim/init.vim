@@ -208,7 +208,7 @@ map <C-n> :tabn<CR>
 map <C-p> :tabp<CR>
 
 " tab control
-map <C-w> :tabclose<CR>
+map <A-w> :tabclose<CR>
 
 " mouse scrolling: scroll page instead of cursor
 :map <ScrollWheelUp> <C-Y>
