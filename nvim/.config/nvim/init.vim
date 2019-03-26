@@ -168,6 +168,10 @@ autocmd BufWritePre * if index(blacklist, &ft) < 0 | :call <SID>StripTrailingWhi
 " restore cursor at same position
 autocmd BufReadPost * if @% !~# '\.git[\/\\]COMMIT_EDITMSG$' && line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
+
+" fourway merge: top is ancestor, left HEAD, center merge, right merged commit
+command MergeTool :Gsdiff :1 | Gvdiff
+
 " hotkeys
 command SaveMake :wa <bar> :make
 command SaveNeomake :wa <bar> :Neomake!
