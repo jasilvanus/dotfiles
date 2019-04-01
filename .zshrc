@@ -115,33 +115,39 @@ if [ ! -z "${ZSH_AUTOJUMP}" ] && [ -e "${ZSH_AUTOJUMP}" ]; then
   . ${ZSH_AUTOJUMP}
 fi
 
-# powerline support
-if [ -z "${DF_POWERLINE}" ] && [ -e ~/.powerline ]; then
-  DF_POWERLINE=~/.powerline
-fi
-if [ -z "${DF_POWERLINE_ZSH}" ] && [ -e ~/.powerline.zsh ]; then
-  DF_POWERLINE_ZSH=~/.powerline.zsh
-fi
-if [ ! -z "${DF_POWERLINE}" ] && [ -e "${DF_POWERLINE}" ]; then
-  if [ ! -z "${DF_POWERLINE_ZSH}" ]; then
-    ZSH_POWERLINE=${DF_POWERLINE_ZSH}
-  else
-    ZSH_POWERLINE=${DF_POWERLINE}/bindings/zsh/powerline.zsh
-  fi
-fi
-if [ ! -z "${ZSH_POWERLINE}" ] && [ -e ${ZSH_POWERLINE} ]; then
-  export PATH="${PATH}:${DF_POWERLINE}/../../../../bin"
-  powerline-daemon -q
-  POWERLINE_ZSH_CONTINUATION=1
-  POWERLINE_ZSH_SELECT=1
-  . ${ZSH_POWERLINE}
-else
-  # no powerline support for .zsh
-  #export PS1="\u@\h:\w: "
-fi
+HAS_PYTHON3=$(if [ -z "$(env python3 --version 2>/dev/null)" ]; then echo "0"; else echo "1"; fi)
+if [ "${HAS_PYTHON3}" = "1" ]; then
+   # powerline support
+   if [ -z "${DF_POWERLINE}" ] && [ -e ~/.powerline ]; then
+     DF_POWERLINE=~/.powerline
+   fi
+   if [ -z "${DF_POWERLINE_ZSH}" ] && [ -e ~/.powerline.zsh ]; then
+     DF_POWERLINE_ZSH=~/.powerline.zsh
+   fi
+   if [ ! -z "${DF_POWERLINE}" ] && [ -e "${DF_POWERLINE}" ]; then
+     if [ ! -z "${DF_POWERLINE_ZSH}" ]; then
+       ZSH_POWERLINE=${DF_POWERLINE_ZSH}
+     else
+       ZSH_POWERLINE=${DF_POWERLINE}/bindings/zsh/powerline.zsh
+     fi
+   fi
+   if [ ! -z "${ZSH_POWERLINE}" ] && [ -e ${ZSH_POWERLINE} ]; then
+     export PATH="${PATH}:${DF_POWERLINE}/../../../../bin"
+     powerline-daemon -q
+     POWERLINE_ZSH_CONTINUATION=1
+     POWERLINE_ZSH_SELECT=1
+     . ${ZSH_POWERLINE}
+   else
+     # no powerline support for .zsh
+     #export PS1="\u@\h:\w: "
+   fi
 
-# de-dup PATH. Note: OrderedDict preserves input order.
-PATH=$(python3 -c 'import os; from collections import OrderedDict; \
-    l=os.environ["PATH"].split(":"); print(":".join(OrderedDict.fromkeys(l)))' )
+   # de-dup PATH. Note: OrderedDict preserves input order.
+   PATH=$(python3 -c 'import os; from collections import OrderedDict; \
+       l=os.environ["PATH"].split(":"); print(":".join(OrderedDict.fromkeys(l)))' )
+
+else
+   echo "No python3 found, running in compat mode.."
+fi # end of python block
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
