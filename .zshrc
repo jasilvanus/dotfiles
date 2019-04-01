@@ -78,7 +78,6 @@ alias lt='ls -tr'
 alias open='xdg-open'
 alias time='/usr/bin/time'
 alias nv='nvim'
-alias vim='echo "Use nvim!"'
 
 #################
 # Functions
