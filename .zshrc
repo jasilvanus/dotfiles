@@ -98,6 +98,8 @@ rlf() { readlink -f ${@}; }
 pushj() { pushd .; j $@; }
 popj() { popd; }
 
+cdrecent() { cd ./*(/om[1]); }
+
 ################
 # Tools
 ################
