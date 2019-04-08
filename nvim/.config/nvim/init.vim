@@ -15,8 +15,17 @@ Plug 'autozimu/LanguageClient-neovim', {
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'lyuts/vim-rtags', { 'for': 'cpp' }
-Plug 'rzaluska/deoplete-rtags', { 'for': 'cpp' }
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"Plug 'rzaluska/deoplete-rtags', { 'for': 'cpp' }
+"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
+Plug 'ncm2/ncm2-ultisnips'
+
+" NOTE: you need to install completion sources to get completions. Check
+" our wiki page for a list of sources: https://github.com/ncm2/ncm2/wiki
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-path'
+
 Plug 'vim-scripts/a.vim'
 Plug 't9md/vim-quickhl'
 Plug 'scrooloose/nerdcommenter'
@@ -50,12 +59,42 @@ command! -bang -nargs=* Rg
 " Required for operations modifying multiple buffers like rename.
 set hidden
 
-" deoplete config
-let g:deoplete#enable_at_startup = 1
-" deoplete tab-complete
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-call deoplete#custom#option('auto_complete_delay', 5)
+" " deoplete config
+" let g:deoplete#enable_at_startup = 1
+" " deoplete tab-complete
+" inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+" call deoplete#custom#option('auto_complete_delay', 5)
 
+"""""""""""""""""""""""""""""""""""""""
+" ncm2 config
+
+"enable ncm2 for all buffers
+autocmd BufEnter * call ncm2#enable_for_buffer()
+
+" IMPORTANT: :help Ncm2PopupOpen for more information
+set completeopt=noinsert,menuone,noselect
+
+" suppress the annoying 'match x of y', 'The only match' and 'Pattern not
+" found' messages
+set shortmess+=c
+
+" " CTRL-C doesn't trigger the InsertLeave autocmd . map to <ESC> instead.
+" inoremap <c-c> <ESC>
+
+" " When the <Enter> key is pressed while the popup menu is visible, it only
+" " hides the menu. Use this mapping to close the menu and also start a new
+" " line.
+" inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
+
+" Use <TAB> to select the popup menu:
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" Press enter key to trigger snippet expansion
+" The parameters are the same as `:help feedkeys()`
+inoremap <silent> <expr> <CR> ncm2_ultisnips#expand_or("\<CR>", 'n')
+
+"""""""""""""""""""""""""""""""""""""""
 " languageclient cfg
 let g:LanguageClient_serverCommands = {
     \ 'cpp': ['cquery', '--log-file=/tmp/cq.log', '--init={"cacheDirectory":"/tmp/silvanus/.cquery-cache/"}'],
