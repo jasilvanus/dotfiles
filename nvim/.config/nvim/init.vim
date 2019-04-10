@@ -3,8 +3,7 @@ call plug#begin('~/.nvim/plugged')
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
@@ -25,6 +24,9 @@ Plug 'ncm2/ncm2-ultisnips'
 " our wiki page for a list of sources: https://github.com/ncm2/ncm2/wiki
 Plug 'ncm2/ncm2-bufword'
 Plug 'ncm2/ncm2-path'
+
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 Plug 'vim-scripts/a.vim'
 Plug 't9md/vim-quickhl'
