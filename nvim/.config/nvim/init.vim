@@ -99,8 +99,8 @@ inoremap <silent> <expr> <CR> ncm2_ultisnips#expand_or("\<CR>", 'n')
 """""""""""""""""""""""""""""""""""""""
 " languageclient cfg
 let g:LanguageClient_serverCommands = {
-    \ 'cpp': ['cquery', '--log-file=/tmp/cq.log', '--init={"cacheDirectory":"/tmp/silvanus/.cquery-cache/"}'],
-    \ 'c': ['cquery', '--log-file=/tmp/cq.log', '--init={"cacheDirectory":"/tmp/silvanus/.cquery-cache/"}'],
+    \ 'cpp': ['clangd', '-index', '-j=32'],
+    \ 'c': ['clangd'],
     \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
     \ 'python': ['pyls'],
     \ }
@@ -109,8 +109,8 @@ let g:LanguageClient_serverCommands = {
     " \ 'c': ['ccls'],
     " \ 'cpp': ['cquery', '--log-file=/tmp/cq.log', '--init={"cacheDirectory":".cquery-cache/"}'],
     " \ 'c': ['cquery', '--log-file=/tmp/cq.log', '--init={"cacheDirectory":".cquery-cache/"}'],
-    " \ 'cpp': ['clangd'],
-    " \ 'c': ['clangd'],
+    \ 'cpp': ['cquery', '--log-file=/tmp/cq.log', '--init={"cacheDirectory":"/tmp/silvanus/.cquery-cache/"}'],
+    \ 'c': ['cquery', '--log-file=/tmp/cq.log', '--init={"cacheDirectory":"/tmp/silvanus/.cquery-cache/"}'],
 
 nnoremap <F4> :call LanguageClient_contextMenu()<CR>
 
