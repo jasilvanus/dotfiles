@@ -37,6 +37,7 @@ Plug 'neomake/neomake', {
     \ }
 Plug 'SailorCrane/vim-swap-string'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
 
 call plug#end()
 
