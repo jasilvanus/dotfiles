@@ -38,6 +38,7 @@ Plug 'neomake/neomake', {
 Plug 'SailorCrane/vim-swap-string'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+Plug 'jauler/vim-auto-gcov-marker'
 
 call plug#end()
 
@@ -161,6 +162,14 @@ let g:NERDToggleCheckAllLines = 1
 :map <C-c> :A<CR>
 :map <C-S-c> :AT<CR>
 :imap <C-c> <ESC>:A<CR>
+
+" gcov config
+let g:auto_gcov_marker_line_covered = '✓'
+let g:auto_gcov_marker_line_uncovered = '✘'
+let g:auto_gcov_marker_branch_covered = '✓✓'
+let g:auto_gcov_marker_branch_partly_covered = '✓✘'
+let g:auto_gcov_marker_branch_uncovered = '✘✘'
+let g:auto_gcov_marker_gcov_path  = '/tmp/silvanus/gcov'
 
 " remaining config
 set mouse=a
