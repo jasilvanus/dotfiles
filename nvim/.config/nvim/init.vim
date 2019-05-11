@@ -104,7 +104,7 @@ inoremap <silent> <expr> <CR> ncm2_ultisnips#expand_or("\<CR>", 'n')
 let g:LanguageClient_serverCommands = {
     \ 'cpp': ['clangd', '-index', '-j=32'],
     \ 'c': ['clangd'],
-    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+    \ 'rust': ['rustup', 'run', 'stable', 'rls'],
     \ 'python': ['pyls'],
     \ }
 
