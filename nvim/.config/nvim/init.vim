@@ -57,12 +57,23 @@ let g:fzf_action = {
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
 
+function InsertInclude(header)
+   let header = a:header
+   let header = substitute(header, 'include/', '', 'g')
+   let header = substitute(header, 'private/', '', 'g')
+   call append(line('.'), '#include <' . header . '>')
+   call cursor(line('.')+1, col('.'))
+endfunction
+
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
   \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
   \   <bang>0 ? fzf#vim#with_preview('up:60%')
   \           : fzf#vim#with_preview('right:50%:hidden', '?'),
   \   <bang>0)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+noremap <leader>i :call fzf#run({'source': 'find -L private include -name "*.H"', 'sink': function('InsertInclude')})<CR>
+noremap <leader>f :call fzf#run({'source': 'find . -name ' . expand('<cfile>'), 'sink': 'e'})<CR>
 
 " lang server config
 " Required for operations modifying multiple buffers like rename.
