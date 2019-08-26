@@ -288,6 +288,8 @@ command SaveNeomake :wa <bar> :Neomake!
 :imap <F5> <ESC>:SaveNeomake<CR>
 :map <F8> :SaveMake<CR>
 :imap <F8> <ESC>:SaveMake<CR>
+:map <Leader>r :checktime<CR>
+:imap <Leader>r :checktime<CR>
 
 " Copy to clipboard
 vnoremap  <leader>y  "+y
