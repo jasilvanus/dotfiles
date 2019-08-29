@@ -48,9 +48,11 @@ Plug 'jauler/vim-auto-gcov-marker'
 call plug#end()
 
 " fzf config
-nnoremap <leader>h :History<CR>
-nnoremap <leader>b :Buffers<CR>
-nnoremap <leader>t :Files<CR>
+nnoremap <leader>fh :History<CR>
+nnoremap <leader>fb :Buffers<CR>
+nnoremap <leader>ft :Files<CR>
+nnoremap <leader>fl :BLines<CR>
+nnoremap <leader>fk :Lines<CR>
 
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
@@ -73,7 +75,7 @@ command! -bang -nargs=* Rg
   \   <bang>0)
 imap <c-x><c-f> <plug>(fzf-complete-path)
 noremap <leader>i :call fzf#run({'source': 'find -L private include -name "*.H"', 'sink': function('InsertInclude')})<CR>
-noremap <leader>f :call fzf#run({'source': 'find . -name ' . expand('<cfile>'), 'sink': 'e'})<CR>
+noremap <leader>of :call fzf#run({'source': 'find . -name ' . expand('<cfile>'), 'sink': 'e'})<CR>
 
 " lang server config
 " Required for operations modifying multiple buffers like rename.
@@ -152,7 +154,8 @@ let g:LanguageClient_serverCommands = {
     " \ 'c': ['cquery', '--log-file=/tmp/cq.log', '--init={"cacheDirectory":"/tmp/silvanus/.cquery-cache/"}'],
 
 nnoremap <F4> :call LanguageClient_contextMenu()<CR>
-nnoremap <leader>cf :call LanguageClient_textDocument_definition() <CR>
+nnoremap <leader>lf :call LanguageClient_textDocument_definition() <CR>
+nnoremap <leader>ls :call LanguageClient_textDocument_documentSymbol() <CR>
 
 " airline config
 let g:airline_theme = "solarized"
@@ -288,8 +291,8 @@ command SaveNeomake :wa <bar> :Neomake!
 :imap <F5> <ESC>:SaveNeomake<CR>
 :map <F8> :SaveMake<CR>
 :imap <F8> <ESC>:SaveMake<CR>
-:map <Leader>r :checktime<CR>
-:imap <Leader>r :checktime<CR>
+:map <Leader>c :checktime<CR>
+:imap <Leader>c :checktime<CR>
 
 " Copy to clipboard
 vnoremap  <leader>y  "+y
