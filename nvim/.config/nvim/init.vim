@@ -256,6 +256,8 @@ autocmd FileType cpp setlocal signcolumn=yes syntax=cpp.doxygen
          \ cino=(3 fdm=syntax foldlevel=20
 autocmd Filetype c,cpp set comments^=:///
 
+au BufRead,BufNewFile *.tpp		set filetype=cpp
+
 " auto-refresh details
 au CursorHold,CursorHoldI,FocusGained,BufEnter * checktime
 
