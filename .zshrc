@@ -100,6 +100,8 @@ popj() { popd; }
 
 cdrecent() { cd ./*(/om[1]); }
 
+toclipboard() { xclip -selection CLIPBOARD; }
+
 ################
 # Tools
 ################
