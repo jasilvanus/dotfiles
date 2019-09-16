@@ -33,9 +33,16 @@ HISTSIZE=1000
 SAVEHIST=1000
 setopt autocd
 setopt interactivecomments
-bindkey -e
 
 # End of lines configured by zsh-newuser-install
+
+# Edit current line in vim
+autoload -U edit-command-line
+# # Emacs style
+# bindkey -e
+zle -N edit-command-line
+bindkey '^xe' edit-command-line
+bindkey '^x^e' edit-command-line
 
 # custom hotkeys
 # use ctrl+arrow to navigate words
