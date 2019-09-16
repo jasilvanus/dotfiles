@@ -51,6 +51,7 @@ call plug#end()
 nnoremap <leader>fh :History<CR>
 nnoremap <leader>fb :Buffers<CR>
 nnoremap <leader>ft :Files<CR>
+nnoremap <leader>fg :GFiles<CR>
 nnoremap <leader>fl :BLines<CR>
 nnoremap <leader>fk :Lines<CR>
 
@@ -294,7 +295,6 @@ command SaveNeomake :wa <bar> :Neomake!
 :map <F8> :SaveMake<CR>
 :imap <F8> <ESC>:SaveMake<CR>
 :map <Leader>c :checktime<CR>
-:imap <Leader>c :checktime<CR>
 
 " Copy to clipboard
 vnoremap  <leader>y  "+y
