@@ -32,4 +32,6 @@ prepend_to_path_if_exists "${HOME}/bin"
 prepend_to_path_if_exists "${HOME}/.local/bin"
 prepend_to_path_if_exists "${HOME}/software/bin"
 
+setxkbmap -option caps:escape
+
 source_if_exists "${HOME}/.profile.local"
