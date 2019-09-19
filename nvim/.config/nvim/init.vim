@@ -133,7 +133,8 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 
 " For conceal markers.
 if has('conceal')
-  set conceallevel=2 concealcursor=niv
+" Note: Use only 'n' for concealcursor as we want the true source in visual/insert
+  set conceallevel=2 concealcursor=n
 endif
 " " Press enter key to trigger snippet expansion
 " " The parameters are the same as `:help feedkeys()`
