@@ -44,6 +44,7 @@ autoload -U edit-command-line
 # Vim style
 bindkey -v
 
+# ctrl-x-e launches ${EDITOR} to edit the current line
 zle -N edit-command-line
 bindkey '^xe' edit-command-line
 bindkey '^x^e' edit-command-line
@@ -164,4 +165,5 @@ else
    echo "No python3 found, running in compat mode.."
 fi # end of python block
 
+# fzf support
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
