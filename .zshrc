@@ -4,7 +4,7 @@ fi
 
 
 # low level version compare, used to check if we skip most of this for old zshs
-# returns whether the first arg is a larger or equal compared to second version
+# Given two version strings, returns the larger of the two.
 # relies on sort -V
 larger_version() {
    echo "
