@@ -36,7 +36,8 @@
         "priority": 10,
         "args": {
           "status_colors": 1
-        }
+        },
+        "exclude_function": "powerline.selectors.by_path.cwd_ignored"
       },
       {
         "function": "powerline.segments.common.time.date",
