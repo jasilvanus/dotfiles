@@ -29,7 +29,8 @@
       },
       {
         "function": "powerline.segments.common.vcs.stash",
-        "priority": 50
+        "priority": 50,
+        "exclude_function": "powerline.selectors.by_path.cwd_ignored"
       },
       {
         "function": "powerline.segments.common.vcs.branch",
