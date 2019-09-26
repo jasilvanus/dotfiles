@@ -143,6 +143,12 @@ if [ -z "${DF_POWERLEVEL}" ] && [ -e ~/.powerlevel10k.zsh-theme ]; then
 fi
 if [ ! -z "${DF_POWERLEVEL}" ] && [ -e "${DF_POWERLEVEL}" ]; then
   . ${DF_POWERLEVEL}
+  DF_POWERLEVEL_CONFIG="${HOME}/.p10k.zsh"
+  if [ ! -e ${DF_POWERLEVEL_CONFIG} ]; then
+     echo "Missing p10k config: ${DF_POWERLEVEL_CONFIG}"
+  else
+     . ${DF_POWERLEVEL_CONFIG}
+  fi
 fi
 
 HAS_PYTHON3=$(if [ -z "$(env python3 --version 2>/dev/null)" ]; then echo "0"; else echo "1"; fi)
