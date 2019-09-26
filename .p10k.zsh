@@ -34,6 +34,7 @@
   typeset -ga POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
       # =========================[ Line #1 ]=========================
       # os_icon               # os identifier
+      context                 # user@hostname
       dir                     # current directory
       vcs                     # git status
       # =========================[ Line #2 ]=========================
@@ -65,7 +66,6 @@
       kubecontext             # current kubernetes context (https://kubernetes.io/)
       terraform               # terraform workspace (https://www.terraform.io)
       aws                     # aws profile (https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
-      context                 # user@hostname
       nordvpn                 # nordvpn connection status, linux only (https://nordvpn.com/)
       ranger                  # ranger shell (https://github.com/ranger/ranger)
       # vpn_ip                # virtual private network indicator
