@@ -25,7 +25,14 @@ zstyle :compinstall filename '~/.zshrc'
 zstyle ':completion:*' menu select
 
 autoload -Uz compinit
-compinit
+
+# Only regenerate .zcompdump every 24h to speed up startup time
+for dump in ~/.zcompdump(N.mh+24); do
+  compinit
+done
+
+compinit -C
+
 # End of lines added by compinstall
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
