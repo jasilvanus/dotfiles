@@ -32,6 +32,9 @@ prepend_to_path_if_exists "${HOME}/bin"
 prepend_to_path_if_exists "${HOME}/.local/bin"
 prepend_to_path_if_exists "${HOME}/software/bin"
 
-setxkbmap -option caps:escape
+# Only run this locally
+if [ -z "${SSH_CONNECTION}" ]; then
+   setxkbmap -option caps:escape
+fi
 
 source_if_exists "${HOME}/.profile.local"
