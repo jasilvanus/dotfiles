@@ -80,13 +80,15 @@
       # example               # example user-defined segment (see prompt_example function below)
   )
 
-  SOL_BG="0"
-  SOL_FG="6"
+  SOL_BG="8"
+  SOL_FG="12"
+  SOL_FG_HL="7"
   SOL_FG_HL_GOOD="4"
   SOL_FG_HL_BAD="5"
   SOL_FG_HL_ERROR="1"
   POWERLEVEL9K_BACKGROUND_COLOR="${SOL_BG}"
   POWERLEVEL9K_FOREGROUND_COLOR="${SOL_FG}"
+  POWERLEVEL9K_FOREGROUND_COLOR_HL="${SOL_FG_HL}"
   # To disable default icons for all segments, set POWERLEVEL9K_VISUAL_IDENTIFIER_EXPANSION=''.
   #
   # To enable default icons for all segments, don't define POWERLEVEL9K_VISUAL_IDENTIFIER_EXPANSION
@@ -239,7 +241,7 @@
   typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND=${POWERLEVEL9K_FOREGROUND_COLOR}
   # Color of the anchor directory segments. Anchor segments are never shortened. The first
   # segment is always an anchor.
-  typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND=${POWERLEVEL9K_FOREGROUND_COLOR}
+  typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND=${POWERLEVEL9K_FOREGROUND_COLOR_HL}
   # Display anchor directory segments in bold.
   typeset -g POWERLEVEL9K_DIR_ANCHOR_BOLD=true
   # Don't shorten directories that contain any of these files. They are anchors.
