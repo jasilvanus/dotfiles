@@ -34,6 +34,7 @@
   typeset -ga POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
       # =========================[ Line #1 ]=========================
       # os_icon               # os identifier
+      vi_mode                 # vim mode
       context                 # user@hostname
       dir                     # current directory
       vcs                     # git status
@@ -763,6 +764,19 @@
   # typeset -g POWERLEVEL9K_TIME_VISUAL_IDENTIFIER_EXPANSION='⭐'
   # Custom prefix.
   # typeset -g POWERLEVEL9K_TIME_PREFIX='%246Fat '
+
+  ####################################[ vi mode ]####################################
+  POWERLEVEL9K_VI_INSERT_MODE_STRING='  INSERT'
+  POWERLEVEL9K_VI_MODE_INSERT_FOREGROUND=11
+  POWERLEVEL9K_VI_COMMAND_MODE_STRING='  NORMAL'
+  POWERLEVEL9K_VI_MODE_NORMAL_FOREGROUND=10
+  POWERLEVEL9K_VI_VISUAL_MODE_STRING='  VISUAL'
+  POWERLEVEL9K_VI_MODE_VISUAL_FOREGROUND=12
+  POWERLEVEL9K_PROMPT_CHAR_OK_VIINS_FOREGROUND=11
+  POWERLEVEL9K_PROMPT_CHAR_OK_VICMD_FOREGROUND=10
+  POWERLEVEL9K_PROMPT_CHAR_OK_VIVIS_FOREGROUND=12
+
+  ####################################[ FINAL ]####################################
 
   # Example of a user-defined prompt segment. Function prompt_example will be called on every
   # prompt if `example` prompt segment is added to POWERLEVEL9K_LEFT_PROMPT_ELEMENTS or
