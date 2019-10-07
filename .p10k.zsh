@@ -504,7 +504,7 @@
   # Default context color.
   typeset -g POWERLEVEL9K_CONTEXT_FOREGROUND=${POWERLEVEL9K_FOREGROUND_COLOR}
   # Default context format: %n is username, %m is hostname.
-  typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE='%n@%m'
+  typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE='%m'
 
   # Context color when running with privileges.
   typeset -g POWERLEVEL9K_CONTEXT_ROOT_FOREGROUND=178
