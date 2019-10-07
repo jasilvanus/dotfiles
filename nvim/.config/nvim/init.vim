@@ -326,6 +326,9 @@ map <C-p> :tabp<CR>
 " tab control
 map <A-w> :tabclose<CR>
 
+" buffer control
+map <leader>bd :bd<CR>
+
 " mouse scrolling: scroll page instead of cursor
 :map <ScrollWheelUp> <C-Y>
 :map <S-ScrollWheelUp> <C-U>
