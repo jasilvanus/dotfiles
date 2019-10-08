@@ -126,7 +126,12 @@ toclipboard() { xclip -selection CLIPBOARD; }
 ################
 
 # dircolors
-eval `dircolors ~/.dir_colors`
+if [ -e "${HOME}/.dir_colors" ];
+then
+   eval `dircolors ${HOME}/.dir_colors`
+else
+   echo "Missing ~/.dir_colors symlink, using default colors"
+fi
 
 # autojump support
 if [ -z "${DF_AUTOJUMP}" ] && [ -e ~/.autojump-shell-base ]; then
