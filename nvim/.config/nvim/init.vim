@@ -42,6 +42,7 @@ Plug 'neomake/neomake', {
 Plug 'SailorCrane/vim-swap-string'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-abolish'
 Plug 'easymotion/vim-easymotion'
 Plug 'jauler/vim-auto-gcov-marker'
 Plug 'yuttie/comfortable-motion.vim'
