@@ -2,7 +2,6 @@ if [ -z "${SOURCED_DOT_PROFILE}" ]; then
    source ~/.profile
 fi
 
-
 # low level version compare, used to check if we skip most of this for old zshs
 # Given two version strings, returns the larger of the two.
 # relies on sort -V
