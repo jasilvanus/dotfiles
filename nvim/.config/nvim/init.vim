@@ -156,6 +156,10 @@ let g:LanguageClient_serverCommands = {
     " \ 'c': ['cquery', '--log-file=/tmp/cq.log', '--init={"cacheDirectory":".cquery-cache/"}'],
     " \ 'cpp': ['cquery', '--log-file=/tmp/cq.log', '--init={"cacheDirectory":"/tmp/silvanus/.cquery-cache/"}'],
     " \ 'c': ['cquery', '--log-file=/tmp/cq.log', '--init={"cacheDirectory":"/tmp/silvanus/.cquery-cache/"}'],
+    "
+let g:LanguageClient_loggingLevel = 'INFO'
+let g:LanguageClient_loggingFile =  expand('~/tmp/vim-LanguageClient.log')
+let g:LanguageClient_serverStderr = expand('~/tmp/vim-LanguageServer.log')
 
 nnoremap <F4> :call LanguageClient_contextMenu()<CR>
 nnoremap <leader>lf :call LanguageClient_textDocument_definition() <CR>
