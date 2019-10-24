@@ -270,6 +270,13 @@ au BufRead,BufNewFile *.tpp		set filetype=cpp
 " auto-refresh details
 au CursorHold,CursorHoldI,FocusGained,BufEnter * checktime
 
+" relative numbers only in active pane
+augroup BgHighlight
+    autocmd!
+    autocmd WinEnter * set relativenumber
+    autocmd WinLeave * set norelativenumber
+augroup END
+
 " trailing whitespace handling
 :highlight ExtraWhitespace ctermbg=red guibg=red
 :match ExtraWhitespace /\s\+$/
