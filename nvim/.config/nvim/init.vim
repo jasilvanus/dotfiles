@@ -248,6 +248,7 @@ set sw=3
 set expandtab
 set cursorline
 set autoread
+set list
 syntax on
 
 " filetype based configs
