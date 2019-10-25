@@ -155,23 +155,13 @@ if [ ! -z "${DF_POWERLEVEL}" ] && [ -e "${DF_POWERLEVEL}" ]; then
   fi
 fi
 
-HAS_PYTHON3=$(if [ -z "$(env python3 --version 2>/dev/null)" ]; then echo "0"; else echo "1"; fi)
-if [ "${HAS_PYTHON3}" != "1" ]; then
-   echo "No python3 found, running in compat mode.."
-fi # end of python block
+# HAS_PYTHON3=$(if [ -z "$(env python3 --version 2>/dev/null)" ]; then echo "0"; else echo "1"; fi)
+# if [ "${HAS_PYTHON3}" != "1" ]; then
+#    echo "No python3 found, running in compat mode.."
+# fi # end of python block
 
-# Given the name of a variable, which is expected to be a colon-separated list of paths,
-# remove all duplicates, keeping the relative order
-dedup_path() {
-   if [ "${HAS_PYTHON3}" != "1" ]; then
-      return 0
-   fi
-   VAR_NAME=${1}
-   # de-dup PATH. Note: OrderedDict preserves input order.
-   eval "${VAR_NAME}=$(python3 -c "import os; from collections import OrderedDict; l=os.environ['${VAR_NAME}'].split(':'); print(':'.join(OrderedDict.fromkeys(l)))")"
-}
-dedup_path PATH
-dedup_path LD_LIBRARY_PATH
+typeset -aU path
+typeset -TaU LD_LIBRARY_PATH ld_library_path
 
 # fzf support
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
