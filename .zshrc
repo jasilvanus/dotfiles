@@ -164,4 +164,9 @@ typeset -aU path
 typeset -TaU LD_LIBRARY_PATH ld_library_path
 
 # fzf support
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+if [ -f ~/.fzf.zsh ]; then
+  source ~/.fzf.zsh
+else
+  # we are in vi mode, so re-enable ctr-r history search
+  bindkey '^R' history-incremental-search-backward
+fi
