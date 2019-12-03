@@ -135,7 +135,7 @@
   # POWERLEVEL9K_MODE=compatible, or install the recommended Powerlevel10k font from
   # https://github.com/romkatv/powerlevel10k/#recommended-meslo-nerd-font-patched-for-powerlevel10k
   # and set POWERLEVEL9K_MODE=nerdfont-complete.
-  typeset -g POWERLEVEL9K_MODE=nerdfont-complete
+  typeset -g POWERLEVEL9K_MODE=compatible
 
   # When set to true, icons appear before content on both sides of the prompt. When set
   # to false, icons go after content. If empty or not set, icons go before content in the left
@@ -766,11 +766,17 @@
   # typeset -g POWERLEVEL9K_TIME_PREFIX='%246Fat '
 
   ####################################[ vi mode ]####################################
-   POWERLEVEL9K_VI_INSERT_MODE_STRING='  INSERT'
+  POWERLEVEL9K_VI_SYMBOL='  '
+  # if this var is set...
+  if (( ${+OVERRIDE_POWERLEVEL9K_NO_EXTRA_SYMS} ))
+  then
+    POWERLEVEL9K_VI_SYMBOL=""
+  fi
+  POWERLEVEL9K_VI_INSERT_MODE_STRING=${POWERLEVEL9K_VI_SYMBOL}'INSERT'
   POWERLEVEL9K_VI_MODE_INSERT_FOREGROUND=11
-  POWERLEVEL9K_VI_COMMAND_MODE_STRING='  NORMAL'
+  POWERLEVEL9K_VI_COMMAND_MODE_STRING=${POWERLEVEL9K_VI_SYMBOL}'NORMAL'
   POWERLEVEL9K_VI_MODE_NORMAL_FOREGROUND=13
-   POWERLEVEL9K_VI_VISUAL_MODE_STRING='  VISUAL'
+  POWERLEVEL9K_VI_VISUAL_MODE_STRING=${POWERLEVEL9K_VI_SYMBOL}'VISUAL'
   POWERLEVEL9K_VI_MODE_VISUAL_FOREGROUND=4
   POWERLEVEL9K_PROMPT_CHAR_OK_VIINS_FOREGROUND=11
   POWERLEVEL9K_PROMPT_CHAR_OK_VICMD_FOREGROUND=10
