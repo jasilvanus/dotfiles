@@ -1,3 +1,7 @@
+if [ -e "${HOME}/.bashrc.precall" ]
+then
+   . "${HOME}/.bashrc.precall"
+fi
 if [ ! -z "${SOURCED_DOT_BASHRC}" ]; then
   return
 fi
