@@ -46,6 +46,7 @@ Plug 'tpope/vim-abolish'
 Plug 'easymotion/vim-easymotion'
 Plug 'jauler/vim-auto-gcov-marker'
 Plug 'yuttie/comfortable-motion.vim'
+Plug 'lifepillar/vim-solarized8'
 
 call plug#end()
 
@@ -349,5 +350,11 @@ map <leader>bd :bd<CR>
 :map <S-ScrollWheelDown> <C-D>
 
 " color profile
+" The following forces usage of colors from the 256 colors palette
+" instead of requiring the terminal emulator to use a solarized theme
+" this degrades the beauty of the colors a bit but greatly increases
+" portability
+" let g:solarized_termcolors=256
+set termguicolors
 set background=light
-colorscheme solarized
+colorscheme solarized8_flat
