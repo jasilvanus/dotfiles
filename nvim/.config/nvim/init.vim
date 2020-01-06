@@ -45,7 +45,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-abolish'
 Plug 'easymotion/vim-easymotion'
 Plug 'jauler/vim-auto-gcov-marker'
-Plug 'yuttie/comfortable-motion.vim'
+" Plug 'yuttie/comfortable-motion.vim'
 Plug 'lifepillar/vim-solarized8'
 
 call plug#end()
