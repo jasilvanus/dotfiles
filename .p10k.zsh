@@ -338,7 +338,7 @@
   # typeset -g POWERLEVEL9K_VCS_BRANCH_ICON='\uF126 '
   # TODO: Find a font/symbol combination that works on windows...
   # typeset -g POWERLEVEL9K_VCS_BRANCH_ICON='\uF126 '
-  typeset -g POWERLEVEL9K_VCS_BRANCH_ICON=' '
+  typeset -g POWERLEVEL9K_VCS_BRANCH_ICON=' git:'
 
   # Untracked files icon. It's really a question mark, your font isn't broken.
   # Change the value of this parameter to show a different icon.
