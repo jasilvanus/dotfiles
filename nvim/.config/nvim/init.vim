@@ -301,6 +301,8 @@ autocmd BufReadPost * if @% !~# '\.git[\/\\]COMMIT_EDITMSG$' && line("'\"") > 1 
 " fourway merge: top is ancestor, left HEAD, center merge, right merged commit
 command MergeTool :Gsdiff :1 | Gvdiff
 
+command OrderedDictToDict :'<,'>s/(\("[^"]*"\),\s*\(.*\))/\1: \2/gc
+
 " hotkeys
 command SaveMake :wa <bar> :make
 command SaveNeomake :wa <bar> :Neomake!
