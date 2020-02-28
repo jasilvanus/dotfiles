@@ -1,3 +1,4 @@
 bind main R !git rebase --autosquash -i %(commit)^
 bind main F !git commit --fixup %(commit)
 bind main C !git checkout %(commit)
+color main-tracked black white bold
