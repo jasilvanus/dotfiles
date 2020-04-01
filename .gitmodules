@@ -4,3 +4,6 @@
 [submodule "solarized-colors"]
 	path = solarized-colors
 	url = https://github.com/altercation/solarized.git
+[submodule "powerlevel10k"]
+	path = powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k.git
