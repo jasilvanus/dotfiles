@@ -1,3 +1,10 @@
+if [ -e "${HOME}/bin/zsh" ] && [ -z "${_ZSH_USE_OVERRIDE_ZSH}" ];
+then
+   export _ZSH_USE_OVERRIDE_ZSH=1
+   exec ${HOME}/bin/zsh
+fi
+unset _ZSH_USE_OVERRIDE_ZSH
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block, everything else may go below.
@@ -19,7 +26,7 @@ ${2}
 " | sort -V | tail -1
 }
 
-if [ "$(larger_version ${ZSH_VERSION} 5)" = "5" ]
+if [ "$(larger_version ${ZSH_VERSION} 5.1)" = "5.1" ]
 then
    export PS1='%F%B%n%f@%m %F%~: %f%b'
    echo "Old zsh detected, using fallback config!"
@@ -149,8 +156,8 @@ if [ ! -z "${ZSH_AUTOJUMP}" ] && [ -e "${ZSH_AUTOJUMP}" ]; then
 fi
 
 # powerlevel10k
-if [ -z "${DF_POWERLEVEL}" ] && [ -e ~/.powerlevel10k.zsh-theme ]; then
-  DF_POWERLEVEL=~/.powerlevel10k.zsh-theme
+if [ -z "${DF_POWERLEVEL}" ]; then
+   DF_POWERLEVEL="${HOME}/.dotfiles/powerlevel10k/powerlevel10k.zsh-theme"
 fi
 if [ ! -z "${DF_POWERLEVEL}" ] && [ -e "${DF_POWERLEVEL}" ]; then
   . ${DF_POWERLEVEL}
