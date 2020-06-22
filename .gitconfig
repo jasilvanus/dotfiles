@@ -1,5 +1,5 @@
 [push]
-	default = current
+	default = upstream
 	recurseSubmodules = on-demand
 [diff]
 	tool = meld
