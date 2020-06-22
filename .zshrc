@@ -16,6 +16,10 @@ if [ -z "${SOURCED_DOT_PROFILE}" ]; then
    source ~/.profile
 fi
 
+if [ -e "${HOME}/.zshrc.local" ]; then
+   source "${HOME}/.zshrc.local"
+fi
+
 # low level version compare, used to check if we skip most of this for old zshs
 # Given two version strings, returns the larger of the two.
 # relies on sort -V
@@ -62,6 +66,8 @@ setopt    incappendhistory  #Immediately append to the history file, not just wh
 
 setopt autocd
 setopt interactivecomments
+# no beeps
+unsetopt beep
 
 # End of lines configured by zsh-newuser-install
 
@@ -115,6 +121,7 @@ alias glances='glances --theme-white'
 alias less='less -S'
 alias lr='ls -latrh'
 alias ls='ls --color=auto'
+alias grep='grep --color=auto'
 alias lt='ls -tr'
 alias open='xdg-open'
 alias time='/usr/bin/time'
@@ -146,6 +153,11 @@ toclipboard() { xclip -selection CLIPBOARD; }
 ################
 # Tools
 ################
+
+# libreoffice without console spam
+libreoffice() {
+   /usr/bin/libreoffice $@ 2>/dev/null
+}
 
 # dircolors
 if [ -e "${HOME}/.dir_colors" ];
