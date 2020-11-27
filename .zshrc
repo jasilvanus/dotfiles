@@ -126,6 +126,8 @@ alias lt='ls -tr'
 alias open='xdg-open'
 alias time='/usr/bin/time'
 alias nv='nvim'
+# intended to be used as 'fzr **<TAB>' because plain '**<TAB>' does not work
+alias fzr='command'
 
 #################
 # Functions
@@ -175,6 +177,15 @@ fi
 if [ ! -z "${ZSH_AUTOJUMP}" ] && [ -e "${ZSH_AUTOJUMP}" ]; then
   . ${ZSH_AUTOJUMP}
 fi
+
+# custom autojump function: without arguments, launch fzf
+j() {
+    if [[ "$#" -ne 0 ]]; then
+        cd $(autojump $@)
+        return
+    fi
+    cd "$(autojump -s | sort -k1gr | awk '$1 ~ /[0-9]:/ && $2 ~ /^\// { for (i=2; i<=NF; i++) { print $(i) } }' |  fzf --height 40% --reverse --inline-info)"
+}
 
 # powerlevel10k
 if [ -z "${DF_POWERLEVEL}" ]; then
