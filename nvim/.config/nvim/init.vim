@@ -36,9 +36,7 @@ Plug 'vim-scripts/a.vim'
 Plug 't9md/vim-quickhl'
 Plug 'scrooloose/nerdcommenter'
 Plug 'zivyangll/git-blame.vim'
-Plug 'neomake/neomake', {
-    \ 'for': 'tex'
-    \ }
+Plug 'neomake/neomake'
 Plug 'SailorCrane/vim-swap-string'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
