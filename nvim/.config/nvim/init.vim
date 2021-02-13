@@ -22,7 +22,7 @@ Plug 'roxma/nvim-yarp'
 Plug 'ncm2/ncm2-neosnippet'
 
 Plug 'Shougo/neosnippet.vim'
-" Plug 'Shougo/neosnippet-snippets'
+Plug 'Shougo/neosnippet-snippets'
 
 " NOTE: you need to install completion sources to get completions. Check
 " our wiki page for a list of sources: https://github.com/ncm2/ncm2/wiki
