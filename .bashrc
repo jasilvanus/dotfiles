@@ -108,3 +108,5 @@ fi
 # de-dup PATH. Note: OrderedDict preserves input order.
 PATH=$(python3 -c 'import os; from collections import OrderedDict; \
     l=os.environ["PATH"].split(":"); print(":".join(OrderedDict.fromkeys(l)))' )
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
