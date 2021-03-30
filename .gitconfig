@@ -11,6 +11,9 @@
 [mergetool "mymeld"]
         cmd = meld $LOCAL $BASE $REMOTE -o $MERGED --auto-merge
 
+[mergetool "vimdiff"]
+      cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+
 [alias]
    co = checkout
    last-commit = !git --no-pager log -n 1 --pretty=format:"%H%n" --
