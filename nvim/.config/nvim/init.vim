@@ -13,9 +13,6 @@ Plug 'autozimu/LanguageClient-neovim', {
 " (Optional) Multi-entry selection UI.
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'lyuts/vim-rtags', { 'for': 'cpp' }
-"Plug 'rzaluska/deoplete-rtags', { 'for': 'cpp' }
-"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
 " Plug 'ncm2/ncm2-ultisnips'
@@ -29,21 +26,14 @@ Plug 'Shougo/neosnippet-snippets'
 Plug 'ncm2/ncm2-bufword'
 Plug 'ncm2/ncm2-path'
 
-" Plug 'SirVer/ultisnips'
-" Plug 'honza/vim-snippets'
-
 Plug 'vim-scripts/a.vim'
 Plug 't9md/vim-quickhl'
 Plug 'scrooloose/nerdcommenter'
 "Plug 'zivyangll/git-blame.vim'
 Plug 'neomake/neomake'
-" Plug 'SailorCrane/vim-swap-string'
 Plug 'tpope/vim-fugitive'
-" Plug 'tpope/vim-surround'
-" Plug 'tpope/vim-abolish'
 Plug 'easymotion/vim-easymotion'
 " Plug 'jauler/vim-auto-gcov-marker'
-" Plug 'yuttie/comfortable-motion.vim'
 Plug 'lifepillar/vim-solarized8'
 
 call plug#end()
@@ -163,10 +153,6 @@ nnoremap <leader>ls :call LanguageClient_textDocument_documentSymbol() <CR>
 " airline config
 let g:airline_theme = "solarized"
 let g:airline_powerline_fonts = 1
-
-" YouCompleteMe config
-"let g:ycm_global_ycm_extra_conf = '$HOME/.vim/.ycm_extra_conf.py'
-"let g:ycm_confirm_extra_conf = 0
 
 " snippets config
 let g:UltiSnipsUsePythonVersion = 3
