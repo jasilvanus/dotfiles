@@ -39,6 +39,9 @@ Plug 'lifepillar/vim-solarized8'
 " shows popup with leader keybindings if no key is pressed after leader
 Plug 'liuchengxu/vim-which-key'
 
+" shows popup with git commit message of last commit changing cursor
+Plug 'rhysd/git-messenger.vim'
+
 call plug#end()
 
 " fzf config
