@@ -36,6 +36,9 @@ Plug 'easymotion/vim-easymotion'
 " Plug 'jauler/vim-auto-gcov-marker'
 Plug 'lifepillar/vim-solarized8'
 
+" shows popup with leader keybindings if no key is pressed after leader
+Plug 'liuchengxu/vim-which-key'
+
 call plug#end()
 
 " fzf config
@@ -115,6 +118,10 @@ imap <expr><TAB>
 " smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 " \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 inoremap <silent> <expr> <CR> ncm2_neosnippet#expand_or("\<CR>", 'n')
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+nnoremap <silent> <leader> :WhichKey '\'<CR>
 
 " " For conceal markers.
 " if has('conceal')
