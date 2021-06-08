@@ -42,6 +42,9 @@ Plug 'liuchengxu/vim-which-key'
 " shows popup with git commit message of last commit changing cursor
 Plug 'rhysd/git-messenger.vim'
 
+" shows git status for each line
+Plug 'airblade/vim-gitgutter'
+
 call plug#end()
 
 " fzf config
