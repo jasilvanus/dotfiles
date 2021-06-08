@@ -121,7 +121,6 @@ inoremap <silent> <expr> <CR> ncm2_neosnippet#expand_or("\<CR>", 'n')
 " " Note: Use only 'n' for concealcursor as we want the true source in visual/insert
 "   set conceallevel=2 concealcursor=n
 " endif
-set conceallevel=0
 " " Press enter key to trigger snippet expansion
 " " The parameters are the same as `:help feedkeys()`
 " inoremap <silent> <expr> <CR> ncm2_ultisnips#expand_or("\<CR>", 'n')
@@ -220,6 +219,7 @@ map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 
 " remaining config
+set conceallevel=0
 set mouse=a
 set number
 set relativenumber
