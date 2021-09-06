@@ -129,6 +129,8 @@ alias nv='nvim'
 # intended to be used as 'fzr **<TAB>' because plain '**<TAB>' does not work
 alias fzr='command'
 
+alias tmux_ttys='tmux list-panes -aF "#{pane_tty}, window #{window_index}, pane #{pane_index}"'
+
 #################
 # Functions
 #################
