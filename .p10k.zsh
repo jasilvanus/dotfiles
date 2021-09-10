@@ -88,7 +88,7 @@
   # SOL_FG_HL_BAD="5"
   # SOL_FG_HL_ERROR="1"
   SOL_BG="0"
-  SOL_FG="8"
+  SOL_FG="6"
   SOL_FG_HL="15"
   SOL_FG_HL_GOOD="4"
   SOL_FG_HL_BAD="5"
