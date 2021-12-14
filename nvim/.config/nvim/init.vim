@@ -243,6 +243,8 @@ set expandtab
 set cursorline
 set autoread
 set list
+set ignorecase
+set smartcase
 syntax on
 
 " filetype based configs
