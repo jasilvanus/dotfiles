@@ -83,6 +83,8 @@ bindkey -v
 zle -N edit-command-line
 bindkey '^xe' edit-command-line
 bindkey '^x^e' edit-command-line
+bindkey -M vicmd '^xe' edit-command-line
+bindkey -M vicmd '^x^e' edit-command-line
 
 # custom hotkeys
 # use ctrl+arrow to navigate words
