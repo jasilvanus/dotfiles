@@ -110,8 +110,8 @@ set shortmess+=c
 " inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
 
 " Use <TAB> to select the popup menu:
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -121,6 +121,18 @@ imap <expr><TAB>
 \ pumvisible() ? "\<C-n>" :
 \ neosnippet#expandable_or_jumpable() ?
 \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+"
+" Note: I removed the pumvisible check below because that led
+" to the same behavior as without shift, i.e. cycle through completion list
+" \ pumvisible() ? "\<C-n>" :
+imap <expr><S-TAB>
+\ neosnippet#jumpable() ?
+\    "\<Plug>(neosnippet_jump)" : "\<TAB>"
+
+" imap <expr><TAB>
+" \ pumvisible() ? "\<C-n>" :
+" \ neosnippet#expandable_or_jumpable() ?
+" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 " smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 " \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 inoremap <silent> <expr> <CR> ncm2_neosnippet#expand_or("\<CR>", 'n')

@@ -5,14 +5,23 @@
 	tool = meld
 [difftool]
 	prompt = false
+      trustExitCode = true
 [merge]
         tool = mymeld
         conflictstyle = diff3
 [mergetool "mymeld"]
         cmd = meld $LOCAL $BASE $REMOTE -o $MERGED --auto-merge
 
-[mergetool "vimdiff"]
+[mergetool "vimdiff4"]
       cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+      trustExitCode = true
+
+[difftool "vimdiff3"]
+      tool = vimdiff
+      trustExitCode = true
+
+[difftool "vimdiff2"]
+      cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
 
 [alias]
    co = checkout
