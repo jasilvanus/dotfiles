@@ -27,7 +27,7 @@ font xft:URWGothic-Book 11
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec konsole --profile tmux
 bindsym $mod+Shift+Return exec konsole --profile non-tmux
 
 # kill focused window
