@@ -10,3 +10,6 @@
 [submodule "mutt-colors-solarized"]
 	path = mutt-colors-solarized
 	url = https://github.com/altercation/mutt-colors-solarized.git
+[submodule "nord-alacritty"]
+	path = nord-alacritty
+	url = https://github.com/arcticicestudio/nord-alacritty
