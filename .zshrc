@@ -119,7 +119,7 @@ bindkey '^[^?' backward-kill-dir
 alias ..='cd ..'
 alias bc='bc -l'
 alias g='git'
-alias glances='glances --theme-white'
+#alias glances='glances --theme-white'
 alias less='less -S'
 alias lr='ls -latrh'
 alias ls='ls --color=auto'
