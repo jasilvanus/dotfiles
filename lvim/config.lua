@@ -95,6 +95,13 @@ augroup END
 ]])
 vim.cmd('match ExtraWhitespace /\\s\\+$/')
 
+-- Ignore trailing whitespace in the lunarvim dashboard
+-- Note: this is currently disabled since it also permanently disables
+-- trailing whitespace highlighting for other fts. A solution would need
+-- to either restrict the match or highlight to specific fts, or call some
+-- function upon buffer events.
+-- vim.cmd('autocmd Filetype dashboard match none')
+
 -- generic LSP settings
 
 -- ---@usage disable automatic installation of servers
