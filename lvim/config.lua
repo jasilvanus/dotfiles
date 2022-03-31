@@ -91,7 +91,7 @@ vim.opt.sw=3
 augroup AuGroupExtraWhitespace
     autocmd!
     autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
-augroup END 
+augroup END
 ]])
 vim.cmd('match ExtraWhitespace /\\s\\+$/')
 
