@@ -1,43 +1,40 @@
 [push]
-	default = upstream
-	recurseSubmodules = on-demand
+	; default = upstream
+	; recurseSubmodules = on-demand
 [diff]
 	tool = meld
 [difftool]
 	prompt = false
-      trustExitCode = true
+   trustExitCode = true
 [merge]
-        tool = mymeld
-        conflictstyle = diff3
+   tool = mymeld
+   conflictstyle = diff3
 [mergetool "mymeld"]
-        cmd = meld $LOCAL $BASE $REMOTE -o $MERGED --auto-merge
+   cmd = meld $LOCAL $BASE $REMOTE -o $MERGED --auto-merge
 
 [mergetool "vimdiff4"]
-      cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
-      trustExitCode = true
+   cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+   trustExitCode = true
 
 [difftool "vimdiff3"]
-      tool = vimdiff
-      trustExitCode = true
+   tool = vimdiff
+   trustExitCode = true
 
 [difftool "vimdiff2"]
-      cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+   cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
 
 [alias]
-   co = checkout
-   last-commit = !git --no-pager log -n 1 --pretty=format:"%H%n" --
    merge-ff = merge --ff-only
    rbi = rebase -i --autosquash --autostash
-   root = rev-parse --show-toplevel
    s = status
    sl = status .
    camno = commit --amend --no-edit
 
 [pull]
-   ff = only
-   rebase = true
-   recurse = true
-   recurseSubmodules = yes
+   ; ff = only
+   ; rebase = true
+   ; recurse = true
+   ; recurseSubmodules = yes
 
 [pager]
    log  = ~/bin/diff-highlight | less
@@ -45,7 +42,7 @@
    diff = ~/bin/diff-highlight | less
 
 [submodule]
-  recurse = true
+  ; recurse = true
 
 [color]
 	ui = auto
@@ -59,7 +56,7 @@
 	updated = green
 
 [color "decorate"]
-        tag = green
+   tag = green
 
 [core]
 	excludesfile = ~/.gitignore_global
