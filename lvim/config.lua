@@ -84,6 +84,7 @@ lvim.builtin.treesitter.highlight.enabled = true
 vim.opt.relativenumber = true
 vim.opt.tabstop=3
 vim.opt.sw=3
+vim.opt.cmdheight=1
 
 -- Extra whitespace highlighting. We need to specify the highlighting effect
 -- in an autocommand to ensure it survives the color scheme, which resets all highlights
