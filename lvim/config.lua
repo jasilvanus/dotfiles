@@ -161,13 +161,14 @@ vim.cmd('match ExtraWhitespace /\\s\\+$/')
 -- }
 
 -- Additional Plugins
--- lvim.plugins = {
---     {"folke/tokyonight.nvim"},
---     {
---       "folke/trouble.nvim",
---       cmd = "TroubleToggle",
---     },
--- }
+lvim.plugins = {
+    {"tpope/vim-fugitive"},
+    -- {"folke/tokyonight.nvim"},
+    -- {
+    --   "folke/trouble.nvim",
+    --   cmd = "TroubleToggle",
+    -- },
+}
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- lvim.autocommands.custom_groups = {
