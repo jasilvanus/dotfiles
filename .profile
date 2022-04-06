@@ -29,6 +29,7 @@ source_if_exists() {
 
 prepend_to_path_if_exists "${HOME}/.cargo/bin"
 prepend_to_path_if_exists "${HOME}/bin"
+prepend_to_path_if_exists "${HOME}/scripts"
 prepend_to_path_if_exists "${HOME}/.local/bin"
 prepend_to_path_if_exists "${HOME}/software/bin"
 #prepend_to_path_if_exists "${HOME}/software/texlive/2019/bin/x86_64-linux"
