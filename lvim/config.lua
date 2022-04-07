@@ -81,10 +81,14 @@ lvim.builtin.treesitter.highlight.enabled = true
 
 
 -- Custom settings
+lvim.builtin.lualine.style = "default"
 vim.opt.relativenumber = true
-vim.opt.tabstop=3
-vim.opt.sw=3
+vim.opt.tabstop=2
+vim.opt.sw=2
 vim.opt.cmdheight=1
+vim.opt.expandtab = true
+
+-- set conceallevel=0
 
 -- Extra whitespace highlighting. We need to specify the highlighting effect
 -- in an autocommand to ensure it survives the color scheme, which resets all highlights
@@ -171,6 +175,8 @@ lvim.plugins = {
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
--- lvim.autocommands.custom_groups = {
---   { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
--- }
+lvim.autocommands.custom_groups = {
+  -- { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
+  { "BufWinEnter", "*.cpp", "setlocal colorcolumn=120" },
+  { "BufWinEnter", "*.h", "setlocal colorcolumn=120" },
+}
