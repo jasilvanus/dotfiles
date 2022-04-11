@@ -6,11 +6,6 @@
 # file being loaded last. If a field is already present in a previous import, it
 # will be replaced.
 #
-# All imports must either be absolute paths starting with `/`, or paths relative
-# to the user's home directory starting with `~/`.
-#import:
-#  - /path/to/alacritty.yml
-
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
@@ -29,9 +24,9 @@ window:
   # Number of lines/columns (not pixels) in the terminal. The number of columns
   # must be at least `2`, while using a value of `0` for columns and lines will
   # fall back to the window manager's recommended size.
-  dimensions:
-    columns: 120
-    lines: 40
+  # dimensions:
+  #   columns: 120
+  #   lines: 40
 
   # Window position (changes require restart)
   #
@@ -879,3 +874,8 @@ font:
 
   # Print all received window events.
   #print_events: false
+
+# All imports must either be absolute paths starting with `/`, or paths relative
+# to the user's home directory starting with `~/`.
+import:
+  - ~/.alacritty.local.yml
