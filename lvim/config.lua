@@ -19,8 +19,25 @@ lvim.leader = "space"
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 
 -- Copy to system clipboard bindings. Note: Requires xclip utility
-lvim.keys.normal_mode["<leader>y"] = "\"+y"
-lvim.keys.normal_mode["<leader>P"] = "\"+p"
+-- Note that we cannot do stuff directly here, but instead define a function
+-- that is called once the plugin has been loaded. Due to lazy loading,
+-- that may be later than now.
+-- copy only in visual mode, and paste only in normal mode
+function Setup_which_key()
+  local wk = require("which-key")
+  wk.register({
+    C = {
+      name = "Clipboard", -- optional group name
+      y = { "\"+y", "Copy to clipboard" },
+    },
+  }, { prefix = "<leader>", mode="v" })
+  wk.register({
+    C = {
+      name = "Clipboard", -- optional group name
+      p = { "\"+p", "Paste from clipboard" },
+    },
+  }, { prefix = "<leader>", mode="n" })
+end
 
 -- unmap a default keymapping
 -- lvim.keys.normal_mode["<C-Up>"] = false
@@ -66,6 +83,7 @@ lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.show_icons.git = 0
+lvim.builtin.which_key.on_config_done = Setup_which_key
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
