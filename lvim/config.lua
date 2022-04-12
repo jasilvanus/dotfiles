@@ -17,6 +17,11 @@ lvim.colorscheme = "onedarker"
 lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
+
+-- Copy to system clipboard bindings. Note: Requires xclip utility
+lvim.keys.normal_mode["<leader>y"] = "\"+y"
+lvim.keys.normal_mode["<leader>P"] = "\"+p"
+
 -- unmap a default keymapping
 -- lvim.keys.normal_mode["<C-Up>"] = false
 -- edit a default keymapping
