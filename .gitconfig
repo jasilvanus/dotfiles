@@ -28,6 +28,8 @@
    rbi = rebase -i --autosquash --autostash
    s = status
    sl = status .
+   rs = restore
+   sw = sw
    camno = commit --amend --no-edit
 
 [pull]
