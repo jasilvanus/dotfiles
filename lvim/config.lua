@@ -39,6 +39,42 @@ function Setup_which_key()
   }, { prefix = "<leader>", mode="n" })
 end
 
+function Setup_telescope()
+  local tc = require("telescope")
+  tc.setup({
+    defaults = {
+      -- Default configuration for telescope goes here:
+      -- config_key = value,
+      mappings = {
+        i = {
+          -- map actions.which_key to <C-h> (default: <C-/>)
+          -- actions.which_key shows the mappings for your picker,
+          -- e.g. git_{create, delete, ...}_branch for the git_branches picker
+          ["<C-h>"] = "which_key"
+        }
+      }
+    },
+    pickers = {
+      -- Default configuration for builtin pickers goes here:
+      git_files = {
+        recurse_submodules = true,
+        show_untracked = false,
+      --   ...
+      }
+      -- Now the picker_config_key will be applied every time you call this
+      -- builtin picker
+    },
+    extensions = {
+      -- Your extension configuration goes here:
+      -- extension_name = {
+      --   extension_config_key = value,
+      -- }
+      -- please take a look at the readme of the extension you want to configure
+    }
+  })
+end
+Setup_telescope()
+
 -- unmap a default keymapping
 -- lvim.keys.normal_mode["<C-Up>"] = false
 -- edit a default keymapping
