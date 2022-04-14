@@ -41,3 +41,8 @@ if [ -z "${SSH_CONNECTION}" ]; then
 fi
 
 source_if_exists "${HOME}/.profile.local"
+
+update_dot_profile() {
+   unset SOURCED_DOT_PROFILE
+   source ~/.profile
+}
