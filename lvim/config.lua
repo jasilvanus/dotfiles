@@ -112,6 +112,7 @@ vim.opt.tabstop=2
 vim.opt.sw=2
 vim.opt.cmdheight=1
 vim.opt.expandtab = true
+vim.opt.wrap = true
 
 -- set conceallevel=0
 
