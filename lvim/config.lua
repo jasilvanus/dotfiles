@@ -75,6 +75,17 @@ function Setup_telescope()
 end
 Setup_telescope()
 
+function Setup_null_ls()
+  require("null-ls").setup({
+    sources = {
+        require("null-ls").builtins.formatting.shellharden,
+        require("null-ls").builtins.diagnostics.shellcheck,
+    },
+  })
+end
+Setup_null_ls()
+
+
 -- unmap a default keymapping
 -- lvim.keys.normal_mode["<C-Up>"] = false
 -- edit a default keymapping
