@@ -173,6 +173,12 @@ augroup END
 ]])
 vim.cmd('match ExtraWhitespace /\\s\\+$/')
 
+-- Call :checktime on update focus events.
+-- Note: tmux can be configured to send these upon active pane switches
+vim.cmd([[
+  autocmd FocusGained * checktime
+]])
+
 -- Ignore trailing whitespace in the lunarvim dashboard
 -- Note: this is currently disabled since it also permanently disables
 -- trailing whitespace highlighting for other fts. A solution would need
