@@ -37,6 +37,11 @@ function Setup_which_key()
       p = { "\"+p", "Paste from clipboard" },
     },
   }, { prefix = "<leader>", mode="n" })
+  wk.register({
+    g = {
+      B = { ":Git blame<CR>", "Full git blame" },
+    },
+  }, { prefix = "<leader>", mode="n" })
 end
 
 function Setup_telescope()
