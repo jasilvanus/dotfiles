@@ -42,6 +42,15 @@ function Setup_which_key()
       B = { ":Git blame<CR>", "Full git blame" },
     },
   }, { prefix = "<leader>", mode="n" })
+  wk.register({
+    F = {
+      name = "Foldmethod",
+      s = { ":set foldmethod=syntax<CR>", "syntax" },
+      e = { ":set foldmethod=expr<CR>", "expr" },
+      m = { ":set foldmethod=manual<CR>", "manual" },
+      i = { ":set foldmethod=indent<CR>", "indent" },
+    },
+  }, { prefix = "<leader>", mode="n" })
 end
 
 function Setup_telescope()
