@@ -195,6 +195,9 @@ vim.cmd([[
   autocmd FocusGained * checktime
 ]])
 
+-- Prepare xml syntax folding -- enable with 'set foldmethod=syntax' (ensure syntax on before)
+vim.cmd('let g:xml_syntax_folding=1')
+
 -- Ignore trailing whitespace in the lunarvim dashboard
 -- Note: this is currently disabled since it also permanently disables
 -- trailing whitespace highlighting for other fts. A solution would need
