@@ -45,10 +45,10 @@ function Setup_which_key()
   wk.register({
     F = {
       name = "Foldmethod",
-      s = { ":set foldmethod=syntax<CR>", "syntax" },
-      e = { ":set foldmethod=expr<CR>", "expr" },
-      m = { ":set foldmethod=manual<CR>", "manual" },
-      i = { ":set foldmethod=indent<CR>", "indent" },
+      s = { ":setlocal foldmethod=syntax<CR>", "syntax" },
+      e = { ":setlocal foldmethod=expr<CR>", "expr" },
+      m = { ":setlocal foldmethod=manual<CR>", "manual" },
+      i = { ":setlocal foldmethod=indent<CR>", "indent" },
     },
   }, { prefix = "<leader>", mode="n" })
 end
