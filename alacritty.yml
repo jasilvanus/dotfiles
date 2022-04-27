@@ -106,6 +106,15 @@ window:
 font:
   # Normal (roman) font face
   #normal:
+
+    # Current preferred font: Hack (from nerd fonts)
+    # Run fc-match monospace to check which font is selected
+    # Reminder for myself: To set, add a .conf file to
+    # the .config/fontconfig dir that sets "Monospace"
+    # to desired font
+    # We do not hardcode a font here because this file is shared across systems
+    # and IMO it is a system setting and we can't ensure font install from here
+
     # Font family
     #
     # Default:
