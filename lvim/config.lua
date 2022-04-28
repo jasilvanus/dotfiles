@@ -51,6 +51,11 @@ function Setup_which_key()
       i = { ":setlocal foldmethod=indent<CR>", "indent" },
     },
   }, { prefix = "<leader>", mode="n" })
+  -- Note: by default, the q binding force-quits without saving, which may be dangerous
+  wk.register({
+    q = { ":q<CR>", "quit" },
+    Q = { ":q!<CR>", "quit (force)" },
+  }, { prefix = "<leader>", mode="n" })
 end
 
 function Setup_telescope()
