@@ -93,6 +93,7 @@ function Setup_null_ls()
   require("null-ls").setup({
     sources = {
         require("null-ls").builtins.formatting.shellharden,
+        require("null-ls").builtins.formatting.prettier,
         require("null-ls").builtins.diagnostics.shellcheck,
         require("null-ls").builtins.diagnostics.markdownlint.with({
           extra_args = { "-c", vim.fn.expand("~/.dotfiles/.markdownlint.json") }
