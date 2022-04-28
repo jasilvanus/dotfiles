@@ -94,7 +94,9 @@ function Setup_null_ls()
     sources = {
         require("null-ls").builtins.formatting.shellharden,
         require("null-ls").builtins.diagnostics.shellcheck,
-        require("null-ls").builtins.diagnostics.markdownlint,
+        require("null-ls").builtins.diagnostics.markdownlint.with({
+          extra_args = { "-c", vim.fn.expand("~/.dotfiles/.markdownlint.json") }
+        }),
         -- pytlint disabled for the time due to outdated diagnostics
         -- require("null-ls").builtins.diagnostics.pylint,
     },
