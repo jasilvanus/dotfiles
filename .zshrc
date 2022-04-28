@@ -135,6 +135,7 @@ alias nv='nvim'
 alias fzr='command'
 
 alias tmux_ttys='tmux list-panes -aF "#{pane_tty}, window #{window_index}, pane #{pane_index}"'
+alias vlc='vlc -q'
 
 #################
 # Functions
