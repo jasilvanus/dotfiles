@@ -140,33 +140,14 @@ alias tmux_ttys='tmux list-panes -aF "#{pane_tty}, window #{window_index}, pane 
 # Functions
 #################
 
-cw() {
-   cmd=$1
-   cat `which ${cmd}`
-}
-
-vw() {
-   cmd=$1
-   vim `which ${cmd}`
-}
-
 rlf() { readlink -f ${@}; }
 
 pushj() { pushd .; j $@; }
 popj() { popd; }
 
-cdrecent() { cd ./*(/om[1]); }
-
-toclipboard() { xclip -selection CLIPBOARD; }
-
 ################
 # Tools
 ################
-
-# libreoffice without console spam
-libreoffice() {
-   /usr/bin/libreoffice $@ 2>/dev/null
-}
 
 # dircolors
 if [ -e "${HOME}/.dir_colors" ];
