@@ -188,6 +188,25 @@ vim.opt.wrap = true
 
 -- set conceallevel=0
 
+-- Minimal .clang-format support: let clang-format dump its configuration,
+-- and set tabstop/sw from that (if successful)
+local function import_clang_format_settings()
+  -- TODO: Process output in lua instead of shell
+  local pipe = io.popen("clang-format --dump-config | grep -i '\\bindentwidth:' | rev | cut -d ' ' -f1 | rev")
+  if not pipe then
+    return
+  end
+  local line = pipe:read("*l")
+  if line then
+    local indent = tonumber(line)
+    print("Detected indent setting of "..tostring(indent))
+    vim.opt.tabstop = indent
+    vim.opt.sw = indent
+  end
+end
+import_clang_format_settings()
+
+
 -- Extra whitespace highlighting. We need to specify the highlighting effect
 -- in an autocommand to ensure it survives the color scheme, which resets all highlights
  vim.cmd([[
