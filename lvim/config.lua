@@ -199,7 +199,7 @@ local function import_clang_format_settings()
   local line = pipe:read("*l")
   if line then
     local indent = tonumber(line)
-    print("Detected indent setting of "..tostring(indent))
+    -- print("Detected indent setting of "..tostring(indent))
     vim.opt.tabstop = indent
     vim.opt.sw = indent
   end
