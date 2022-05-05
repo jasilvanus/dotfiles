@@ -51,6 +51,12 @@ function Setup_which_key()
       i = { ":setlocal foldmethod=indent<CR>", "indent" },
     },
   }, { prefix = "<leader>", mode="n" })
+  wk.register({
+    l = {
+      F = { ":write | :! git clang-format -f -- %<CR> | :checktime<CR>", "Run git-format on local changes" },
+      -- F = { ":lua print(5)<CR>", "Run git-format on local changes1" },
+    },
+  }, { prefix = "<leader>", mode="n" })
   -- Note: by default, the q binding force-quits without saving, which may be dangerous
   wk.register({
     q = { ":q<CR>", "quit" },
