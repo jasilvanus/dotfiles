@@ -53,7 +53,9 @@ function Setup_which_key()
   }, { prefix = "<leader>", mode="n" })
   wk.register({
     l = {
+      D = { ":lua vim.diagnostic.open_float()<CR>", "Show current line diagnostic popup" },
       F = { ":write | :! git clang-format -f -- %<CR> | :checktime<CR>", "Run git-format on local changes" },
+      v = { ":lua DiagnosticVirtualTextToggle()<CR>", "Toggle virtual text" },
       -- F = { ":lua print(5)<CR>", "Run git-format on local changes1" },
     },
   }, { prefix = "<leader>", mode="n" })
@@ -116,6 +118,31 @@ function Setup_null_ls()
 end
 Setup_null_ls()
 
+
+-- Virtual text enable/disable/toggle functions
+-- I could not find a way to query the current state,
+-- so instead we manage our own state here and export that on
+-- every action
+__DiagnosticVirtualTextState = true
+function DiagnosticVirtualTextUpdateEnableDisable()
+  -- Also disable underline, as this distracts as well
+  vim.diagnostic.config({virtual_text = __DiagnosticVirtualTextState, underline = __DiagnosticVirtualTextState})
+end
+
+function DiagnosticVirtualTextEnable()
+  __DiagnosticVirtualTextState = true
+  DiagnosticVirtualTextUpdateEnableDisable()
+end
+
+function DiagnosticVirtualTextDisable()
+  __DiagnosticVirtualTextState = false
+  DiagnosticVirtualTextUpdateEnableDisable()
+end
+
+function DiagnosticVirtualTextToggle()
+  __DiagnosticVirtualTextState = not __DiagnosticVirtualTextState
+  DiagnosticVirtualTextUpdateEnableDisable()
+end
 
 -- unmap a default keymapping
 -- lvim.keys.normal_mode["<C-Up>"] = false
