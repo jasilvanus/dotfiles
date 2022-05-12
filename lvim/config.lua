@@ -18,6 +18,17 @@ lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 
+-- This command highlights all occurences of the current selection,
+-- also working for multi-line text
+-- Compored to the original version, I added on <cr> at the end to terminate the pending command,
+-- removed the histadd, and use the "x register instead of *
+-- to avoid messing up the default register by unrelated highlighting
+ vim.cmd([[
+xnoremap <silent> <cr> "xy:silent! let searchTerm = '\V'.substitute(escape(@x, '\/'), "\n", '\\n', "g") <bar> let @/ = searchTerm <bar> echo '/'.@/ <bar> set hls<cr><cr>
+]])
+-- Original version:
+-- xnoremap <silent> <cr> "*y:silent! let searchTerm = '\V'.substitute(escape(@*, '\/'), "\n", '\\n', "g") <bar> let @/ = searchTerm <bar> echo '/'.@/ <bar> call histadd("search", searchTerm) <bar> set hls<cr>
+
 -- Copy to system clipboard bindings. Note: Requires xclip utility
 -- Note that we cannot do stuff directly here, but instead define a function
 -- that is called once the plugin has been loaded. Due to lazy loading,
