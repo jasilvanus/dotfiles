@@ -40,6 +40,7 @@ function Setup_which_key()
   wk.register({
     g = {
       B = { ":Git blame<CR>", "Full git blame" },
+      q = { ":Git! difftool<CR>", "Populate quickfix with diff" },
     },
   }, { prefix = "<leader>", mode="n" })
   wk.register({
