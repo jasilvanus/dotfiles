@@ -340,6 +340,7 @@ vim.cmd('let g:xml_syntax_folding=1')
 -- Additional Plugins
 lvim.plugins = {
     {"tpope/vim-fugitive"},
+    {"rhysd/vim-llvm"},
     -- {"folke/tokyonight.nvim"},
     -- {
     --   "folke/trouble.nvim",
@@ -350,6 +351,7 @@ lvim.plugins = {
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 lvim.autocommands.custom_groups = {
   -- { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
+  { "BufWinEnter", "*.ll", ":lua vim.bo.commentstring = '; %s'" },
   { "BufWinEnter", "*.cpp", "setlocal colorcolumn=120" },
   { "BufWinEnter", "*.h", "setlocal colorcolumn=120" },
 }
