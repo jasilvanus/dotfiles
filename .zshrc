@@ -119,6 +119,7 @@ bindkey '^[^?' backward-kill-dir
 alias ..='cd ..'
 alias bc='bc -l'
 alias g='git'
+alias gdb='gdb -q' # disables pagination. cannot be done in .gdbinit because it is read AFTER first printing
 #alias glances='glances --theme-white'
 alias less='less -S'
 # alias lr='ls -latrh'
