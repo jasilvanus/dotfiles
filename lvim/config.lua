@@ -37,6 +37,9 @@ xnoremap <silent> <cr> "xy:silent! let searchTerm = '\V'.substitute(escape(@x, '
 function Setup_which_key()
   local wk = require("which-key")
   wk.register({
+    L = { ":lua os.execute('echo break '..vim.fn.expand('%')..':'..vim.api.nvim_win_get_cursor(0)[1]..' | xclip -selection clipboard')<CR>", "Export gdb breakpoint on current line to system clipboard." },
+  }, { prefix = "g", mode="n" })
+  wk.register({
     C = {
       name = "Clipboard", -- optional group name
       y = { "\"+y", "Copy to clipboard" },
