@@ -1,6 +1,7 @@
 bind main R !git rebase --autosquash -i %(commit)^
 bind main F !git commit --fixup %(commit)
 bind main C !git checkout %(commit)
+bind main Y !sh -c "git rev-parse --short %(commit) | tr \"\\n\" \" \" | xclip -selection c && echo Copied $(git rev-parse --short %(commit)) to clipboard"
 color main-tracked black white bold
 
 # settings for large repos
