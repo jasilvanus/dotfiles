@@ -117,6 +117,7 @@ bindkey '^[^?' backward-kill-dir
 # Aliases
 #################
 alias ..='cd ..'
+alias aptns='SKIP_AUTOSNAP=YES apt' # requires sudo alias expansion to be useful
 alias bc='bc -l'
 alias g='git'
 alias gdb='gdb -q' # disables pagination. cannot be done in .gdbinit because it is read AFTER first printing
@@ -134,6 +135,7 @@ alias time='/usr/bin/time'
 alias nv='nvim'
 # intended to be used as 'fzr **<TAB>' because plain '**<TAB>' does not work
 alias fzr='command'
+alias sudo='sudo ' # allow alias expansion for sudo
 
 alias tmux_ttys='tmux list-panes -aF "#{pane_tty}, window #{window_index}, pane #{pane_index}"'
 alias vlc='vlc -q'
