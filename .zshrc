@@ -63,6 +63,7 @@ SAVEHIST=$HISTSIZE               #Number of history entries to save to disk
 setopt    appendhistory     #Append history to the history file (no overwriting)
 setopt    sharehistory      #Share history across terminals
 setopt    incappendhistory  #Immediately append to the history file, not just when a term is killed
+setopt    hist_ignore_all_dups #Ignore duplicates in history
 
 setopt autocd
 setopt interactivecomments
