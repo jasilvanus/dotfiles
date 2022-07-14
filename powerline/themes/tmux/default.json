@@ -26,13 +26,15 @@
 					"format": "%H:%M",
 					"istime": true
 				}
-			},
+			}
+		],
+    "disabled": [
 			{
 				"function": "powerline.segments.common.net.hostname",
 				"args": {
 					"only_if_ssh": true
 				}
 			}
-		]
+    ]
 	}
 }
