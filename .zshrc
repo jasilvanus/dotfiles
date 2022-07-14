@@ -160,6 +160,7 @@ alias sudo='sudo ' # allow alias expansion for sudo
 
 alias tmux_ttys='tmux list-panes -aF "#{pane_tty}, window #{window_index}, pane #{pane_index}"'
 alias vlc='vlc -q'
+alias kxdot='pkill xdg-open; pkill xdot'
 
 #################
 # Functions
