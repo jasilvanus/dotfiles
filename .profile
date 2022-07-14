@@ -12,6 +12,11 @@ export MAKEFLAGS="-j$(nproc)"
 export BROWSER=/usr/bin/google-chrome-stable
 export TERMINAL=/usr/bin/konsole
 
+# Set cache dir. Some tools (e.g. ccache) use this to default
+# their cache directory. We set it here to ensure it is used,
+# because it is on a separate BTRFS subvolume.
+export XDG_CACHE_HOME="${HOME}/.cache"
+
 prepend_to_path_if_exists() {
    ARG=${1}
    if [ -e "${ARG}" ]
