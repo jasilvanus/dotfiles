@@ -38,6 +38,7 @@ function Setup_which_key()
   local wk = require("which-key")
   wk.register({
     L = { ":lua os.execute('echo break '..vim.fn.expand('%')..':'..vim.api.nvim_win_get_cursor(0)[1]..' | xclip -selection clipboard')<CR>", "Export gdb breakpoint on current line to system clipboard." },
+    P = { ":lua os.execute('readlink -f '..vim.fn.expand('%')..' | xclip -selection clipboard')<CR>", "Export absolute path of current file to system clipboard." },
   }, { prefix = "g", mode="n" })
   wk.register({
     C = {
