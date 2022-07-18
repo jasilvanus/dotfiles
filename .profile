@@ -11,6 +11,7 @@ export LD_LIBRARY_PATH="${HOME}/software/lib64:${LD_LIBRARY_PATH}"
 export MAKEFLAGS="-j$(nproc)"
 export BROWSER=/usr/bin/google-chrome-stable
 export TERMINAL=/usr/bin/konsole
+export P4CONFIG=".p4config"
 
 # Set cache dir. Some tools (e.g. ccache) use this to default
 # their cache directory. We set it here to ensure it is used,
