@@ -142,6 +142,7 @@ alias aptns='SKIP_AUTOSNAP=YES apt' # requires sudo alias expansion to be useful
 alias bc='bc -l'
 alias g='git'
 alias gdb='gdb -q' # disables pagination. cannot be done in .gdbinit because it is read AFTER first printing
+alias cgdb='cgdb -q'
 #alias glances='glances --theme-white'
 alias less='less -S'
 # alias lr='ls -latrh'
