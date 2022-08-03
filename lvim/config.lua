@@ -81,11 +81,14 @@ function Setup_which_key()
   wk.register({
     q = { ":q<CR>", "quit" },
     Q = { ":q!<CR>", "quit (force)" },
+    P = { "<cmd>Telescope projects<CR>", "Projects" }
   }, { prefix = "<leader>", mode="n" })
 end
 
 function Setup_telescope()
   local tc = require("telescope")
+  -- Load project management extension
+  tc.load_extension('project')
   tc.setup({
     defaults = {
       -- Default configuration for telescope goes here:
@@ -344,6 +347,7 @@ vim.cmd('let g:xml_syntax_folding=1')
 lvim.plugins = {
     {"tpope/vim-fugitive"},
     {"rhysd/vim-llvm"},
+    {"nvim-telescope/telescope-project.nvim"},
     -- {"folke/tokyonight.nvim"},
     -- {
     --   "folke/trouble.nvim",
