@@ -65,6 +65,7 @@ function Setup_which_key()
       e = { ":setlocal foldmethod=expr<CR>", "expr" },
       m = { ":setlocal foldmethod=manual<CR>", "manual" },
       i = { ":setlocal foldmethod=indent<CR>", "indent" },
+      p = { ":setlocal foldexpr=(getline(v:lnum)=~@/)?0:1 foldmethod=expr foldlevel=0 foldcolumn=2 foldminlines=0<CR>", "current search pattern" },
     },
   }, { prefix = "<leader>", mode="n" })
   wk.register({
