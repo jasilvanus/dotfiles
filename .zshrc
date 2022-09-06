@@ -154,7 +154,6 @@ alias grep='grep --color=auto'
 alias lt='ls -tr'
 alias open='xdg-open'
 alias time='/usr/bin/time'
-alias nv='nvim'
 # intended to be used as 'fzr **<TAB>' because plain '**<TAB>' does not work
 alias fzr='command'
 alias sudo='sudo ' # allow alias expansion for sudo
@@ -162,6 +161,7 @@ alias sudo='sudo ' # allow alias expansion for sudo
 alias tmux_ttys='tmux list-panes -aF "#{pane_tty}, window #{window_index}, pane #{pane_index}"'
 alias vlc='vlc -q'
 alias kxdot='pkill xdg-open; pkill xdot'
+alias llvim='lvim -c "set ft=llvm"'
 
 #################
 # Functions
