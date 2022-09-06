@@ -439,6 +439,9 @@ lvim.plugins = {
     {"tpope/vim-fugitive"},
     {"rhysd/vim-llvm"},
     {"nvim-telescope/telescope-project.nvim"},
+    {"ntpeters/vim-better-whitespace"},
+    -- Highlight current word under cursor for filetypes without LSP support
+    -- This is conditionally enabled for certain FTs, because usually lvim already does it
     {"RRethy/vim-illuminate"},
     -- {"folke/tokyonight.nvim"},
     -- {
