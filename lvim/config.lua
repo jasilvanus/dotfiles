@@ -293,8 +293,8 @@ lvim.builtin.treesitter.highlight.enabled = true
 -- Custom settings
 lvim.builtin.lualine.style = "default"
 vim.opt.relativenumber = true
-vim.opt.tabstop=2
-vim.opt.sw=2
+vim.opt.tabstop=4
+vim.opt.sw=4
 vim.opt.cmdheight=1
 vim.opt.expandtab = true
 vim.opt.wrap = true
