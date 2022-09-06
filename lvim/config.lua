@@ -92,6 +92,11 @@ function Setup_telescope()
   tc.load_extension('project')
   tc.setup({
     defaults = {
+      layout_config = {
+        -- Wider window to avoid truncating paths
+        horizontal = { width = 0.9 }
+      -- other layout configuration here
+      },
       -- Default configuration for telescope goes here:
       -- config_key = value,
       mappings = {
