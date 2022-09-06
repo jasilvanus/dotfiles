@@ -145,6 +145,17 @@ function Setup_null_ls()
 end
 Setup_null_ls()
 
+-- function Setup_bufferline()
+-- require('bufferline').setup {
+--   options = {
+--     max_name_length = 30,
+--     max_prefix_length = 15, -- prefix used when a buffer is de-duplicated
+--     tab_size = 18,
+--   }
+-- }
+-- end
+-- Setup_bufferline()
+
 
 -- Virtual text enable/disable/toggle functions
 -- I could not find a way to query the current state,
