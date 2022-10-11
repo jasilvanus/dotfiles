@@ -200,6 +200,8 @@ function Setup_illuminate()
   end
 Setup_illuminate()
 
+require('leap').add_default_mappings()
+
 -- Virtual text enable/disable/toggle functions
 -- I could not find a way to query the current state,
 -- so instead we manage our own state here and export that on
@@ -446,6 +448,7 @@ lvim.plugins = {
     -- This is conditionally enabled for certain FTs, because usually lvim already does it
     {"RRethy/vim-illuminate"},
     {"beyondmarc/hlsl.vim"},
+    {"ggandor/leap.nvim"},
     -- {"folke/tokyonight.nvim"},
     -- {
     --   "folke/trouble.nvim",
