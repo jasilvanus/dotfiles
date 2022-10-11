@@ -268,6 +268,7 @@ lvim.builtin.alpha.active = false
 lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
+lvim.builtin.nvimtree.setup.view.width = 50
 lvim.builtin.which_key.on_config_done = Setup_which_key
 
 -- if you don't want all the parsers change this to a table of the ones you want
