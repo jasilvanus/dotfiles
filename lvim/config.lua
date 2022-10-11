@@ -445,6 +445,7 @@ lvim.plugins = {
     -- Highlight current word under cursor for filetypes without LSP support
     -- This is conditionally enabled for certain FTs, because usually lvim already does it
     {"RRethy/vim-illuminate"},
+    {"beyondmarc/hlsl.vim"},
     -- {"folke/tokyonight.nvim"},
     -- {
     --   "folke/trouble.nvim",
