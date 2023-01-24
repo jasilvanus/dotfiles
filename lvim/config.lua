@@ -82,7 +82,8 @@ function Setup_which_key()
   wk.register({
     q = { ":q<CR>", "quit" },
     Q = { ":q!<CR>", "quit (force)" },
-    P = { "<cmd>Telescope projects<CR>", "Projects" }
+    P = { "<cmd>Telescope projects<CR>", "Projects" },
+    W = { ":wa<CR>", "Save all" }
   }, { prefix = "<leader>", mode="n" })
 end
 
