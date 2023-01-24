@@ -443,6 +443,7 @@ vim.cmd('let g:xml_syntax_folding=1')
 -- Additional Plugins
 lvim.plugins = {
     {"tpope/vim-fugitive"},
+    {"tpope/vim-sleuth"},
     {"rhysd/vim-llvm"},
     {"nvim-telescope/telescope-project.nvim"},
     {"ntpeters/vim-better-whitespace"},
