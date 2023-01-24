@@ -78,10 +78,10 @@ down-line-or-local-history() {
 }
 zle -N down-line-or-local-history
 
-bindkey '^[OA' up-line-or-history     # Cursor up
-bindkey '^[OB' down-line-or-history   # Cursor down
-bindkey '^[[1;5A' up-line-or-local-history    # [CTRL] + Cursor up
-bindkey '^[[1;5B' down-line-or-local-history  # [CTRL] + Cursor down
+bindkey '^[OA' up-line-or-local-history     # Cursor up
+bindkey '^[OB' down-line-or-local-history   # Cursor down
+# bindkey '^[[1;5A' up-line-or-local-history    # [CTRL] + Cursor up
+# bindkey '^[[1;5B' down-line-or-local-history  # [CTRL] + Cursor down
 
 # Other config
 
