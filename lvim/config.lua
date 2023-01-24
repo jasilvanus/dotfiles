@@ -303,6 +303,7 @@ vim.opt.cmdheight=1
 vim.opt.expandtab = true
 vim.opt.wrap = true
 vim.opt.list = true
+vim.opt.jumpoptions="stack"
 
 -- set conceallevel=0
 
