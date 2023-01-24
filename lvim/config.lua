@@ -477,3 +477,7 @@ autocmd FileType llvm set iskeyword+=.
 autocmd FileType llvm set iskeyword+=#
 autocmd FileType llvm hi link illuminatedWord LspReferenceText
 ]])
+
+-- For LSP highlights, we need to set LspReferenceText, LspReferenceRead and LspReferenceWrite
+-- As long as I'm using the onedarker scheme, I just fix these groups in the plugin itself,
+-- as overwriting here did not work.
