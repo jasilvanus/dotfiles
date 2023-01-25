@@ -51,14 +51,6 @@ function Setup_which_key()
       name = "Clipboard", -- optional group name
       p = { "\"+p", "Paste from clipboard" },
     },
-  }, { prefix = "<leader>", mode="n" })
-  wk.register({
-    g = {
-      B = { ":Git blame<CR>", "Full git blame" },
-      q = { ":Git! difftool<CR>", "Populate quickfix with diff" },
-    },
-  }, { prefix = "<leader>", mode="n" })
-  wk.register({
     F = {
       name = "Foldmethod",
       s = { ":setlocal foldmethod=syntax<CR>", "syntax" },
@@ -67,8 +59,10 @@ function Setup_which_key()
       i = { ":setlocal foldmethod=indent<CR>", "indent" },
       p = { ":setlocal foldexpr=(getline(v:lnum)=~@/)?0:1 foldmethod=expr foldlevel=0 foldcolumn=2 foldminlines=0<CR>", "current search pattern" },
     },
-  }, { prefix = "<leader>", mode="n" })
-  wk.register({
+    g = {
+      B = { ":Git blame<CR>", "Full git blame" },
+      q = { ":Git! difftool<CR>", "Populate quickfix with diff" },
+    },
     l = {
       D = { ":lua vim.diagnostic.open_float()<CR>", "Show current line diagnostic popup" },
       F = { ":write | :! git clang-format -f -- %<CR> | :checktime<CR>", "Run git-format on local changes" },
@@ -77,12 +71,10 @@ function Setup_which_key()
       v = { ":lua DiagnosticVirtualTextToggle()<CR>", "Toggle virtual text" },
       -- F = { ":lua print(5)<CR>", "Run git-format on local changes1" },
     },
-  }, { prefix = "<leader>", mode="n" })
+    P = { "<cmd>Telescope projects<CR>", "Projects" },
   -- Note: by default, the q binding force-quits without saving, which may be dangerous
-  wk.register({
     q = { ":q<CR>", "quit" },
     Q = { ":q!<CR>", "quit (force)" },
-    P = { "<cmd>Telescope projects<CR>", "Projects" },
     W = { ":wa<CR>", "Save all" }
   }, { prefix = "<leader>", mode="n" })
 end
