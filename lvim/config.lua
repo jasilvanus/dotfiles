@@ -449,6 +449,8 @@ lvim.plugins = {
     {"RRethy/vim-illuminate"},
     {"beyondmarc/hlsl.vim"},
     {"ggandor/leap.nvim"},
+    {"junegunn/fzf"},
+    {"junegunn/fzf.vim"},
     -- {"folke/tokyonight.nvim"},
     -- {
     --   "folke/trouble.nvim",
