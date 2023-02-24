@@ -137,31 +137,31 @@ bindkey '^[^?' backward-kill-dir
 #################
 # Aliases
 #################
+
+# alias lr='ls -latrh'
+# intended to be used as 'fzr **<TAB>' because plain '**<TAB>' does not work
+#alias glances='glances --theme-white'
 alias ..='cd ..'
 alias aptns='SKIP_AUTOSNAP=YES apt' # requires sudo alias expansion to be useful
 alias bc='bc -l'
+alias cgdb='cgdb -q'
+alias fzr='command'
 alias g='git'
 alias gdb='gdb -q' # disables pagination. cannot be done in .gdbinit because it is read AFTER first printing
-alias cgdb='cgdb -q'
-#alias glances='glances --theme-white'
-alias less='less -S'
-# alias lr='ls -latrh'
-alias ls='ls --color=auto'
-alias l='exa'
-alias lr='exa --git -l --color-scale  -s date'
-alias la='exa --git -l --color-scale  -s date --all'
 alias grep='grep --color=auto'
+alias kxdot='pkill xdg-open; pkill xdot'
+alias l='exa'
+alias la='exa --git -l --color-scale  -s date --all'
+alias less='less -S'
+alias llvim='lvim -c "set ft=llvm"'
+alias lr='exa --git -l --color-scale  -s date'
+alias ls='ls --color=auto'
 alias lt='ls -tr'
 alias open='xdg-open'
-alias time='/usr/bin/time'
-# intended to be used as 'fzr **<TAB>' because plain '**<TAB>' does not work
-alias fzr='command'
 alias sudo='sudo ' # allow alias expansion for sudo
-
+alias time='/usr/bin/time'
 alias tmux_ttys='tmux list-panes -aF "#{pane_tty}, window #{window_index}, pane #{pane_index}"'
 alias vlc='vlc -q'
-alias kxdot='pkill xdg-open; pkill xdot'
-alias llvim='lvim -c "set ft=llvm"'
 
 #################
 # Functions
