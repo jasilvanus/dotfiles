@@ -75,6 +75,10 @@ function Setup_which_key()
   -- Note: by default, the q binding force-quits without saving, which may be dangerous
     q = { ":q<CR>", "quit" },
     Q = { ":q!<CR>", "quit (force)" },
+    s = {
+      l = { ":BLines<CR>", "Text (current buffer)" },
+      T = { ":lua require('telescope.builtin').live_grep({grep_open_files=true})<CR>", "Text (open buffers)" },
+    },
     W = { ":wa<CR>", "Save all" }
   }, { prefix = "<leader>", mode="n" })
 end
