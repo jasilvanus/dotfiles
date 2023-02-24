@@ -71,7 +71,6 @@ function Setup_which_key()
       v = { ":lua DiagnosticVirtualTextToggle()<CR>", "Toggle virtual text" },
       -- F = { ":lua print(5)<CR>", "Run git-format on local changes1" },
     },
-    P = { "<cmd>Telescope projects<CR>", "Projects" },
   -- Note: by default, the q binding force-quits without saving, which may be dangerous
     q = { ":q<CR>", "quit" },
     Q = { ":q!<CR>", "quit (force)" },
@@ -85,8 +84,6 @@ end
 
 function Setup_telescope()
   local tc = require("telescope")
-  -- Load project management extension
-  tc.load_extension('project')
   tc.setup({
     defaults = {
       layout_config = {
@@ -248,7 +245,6 @@ end
 -- }
 
 -- Use which-key to add extra bindings with the leader-key prefix
--- lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
 -- lvim.builtin.which_key.mappings["t"] = {
 --   name = "+Trouble",
 --   r = { "<cmd>Trouble lsp_references<cr>", "References" },
@@ -442,7 +438,6 @@ lvim.plugins = {
     {"tpope/vim-fugitive"},
     {"tpope/vim-sleuth"},
     {"rhysd/vim-llvm"},
-    {"nvim-telescope/telescope-project.nvim"},
     {"ntpeters/vim-better-whitespace"},
     -- Highlight current word under cursor for filetypes without LSP support
     -- This is conditionally enabled for certain FTs, because usually lvim already does it
