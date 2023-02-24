@@ -65,7 +65,7 @@ function Setup_which_key()
     },
     l = {
       D = { ":lua vim.diagnostic.open_float()<CR>", "Show current line diagnostic popup" },
-      F = { ":write | :! git clang-format -f -- %<CR> | :checktime<CR>", "Run git-format on local changes" },
+      F = { ":write | :! cd $(dirname %) && git clang-format -f -- %<CR> | :checktime<CR>", "Run git-format on local changes" },
       -- Note: by default, for some reason this uses the loclist instead of qflist
       q = { ":lua vim.diagnostic.setqflist()<CR>", "Quickfix" },
       v = { ":lua DiagnosticVirtualTextToggle()<CR>", "Toggle virtual text" },
