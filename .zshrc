@@ -145,6 +145,7 @@ alias ..='cd ..'
 alias aptns='SKIP_AUTOSNAP=YES apt' # requires sudo alias expansion to be useful
 alias bc='bc -l'
 alias cgdb='cgdb -q'
+alias chtop='HTOPRC=~/.config/htop/htoprc-compact htop'
 alias fzr='command'
 alias g='git'
 alias gdb='gdb -q' # disables pagination. cannot be done in .gdbinit because it is read AFTER first printing
