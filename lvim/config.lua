@@ -260,7 +260,6 @@ end
 
 -- Disable dashboard plugin
 lvim.builtin.alpha.active = false
-lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.view.width = 50
@@ -453,14 +452,10 @@ lvim.plugins = {
     -- },
 }
 
--- Autocommands (https://neovim.io/doc/user/autocmd.html)
-lvim.autocommands.custom_groups = {
-  -- { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
-  { "BufWinEnter", "*.ll", ":lua vim.bo.commentstring = '; %s'" },
-  { "BufWinEnter", "*.dxil", "set filetype=llvm" },
-  { "BufWinEnter", "*.cpp", "setlocal colorcolumn=120" },
-  { "BufWinEnter", "*.h", "setlocal colorcolumn=120" },
-}
+vim.api.nvim_create_autocmd("BufWinEnter", {
+	  pattern = { "*.ll", "*.dxil" },
+	  command = "set filetype=llvm",
+})
 
 -- The highlight link is a hack to get it to work, setting in the config
 -- function does not work for some reason. I only need it for llvm for the time being.
