@@ -31,6 +31,7 @@
    rs = restore
    sw = sw
    camno = commit --amend --no-edit
+   swfzf = "!git switch $(git branch | fzf)"
 
 [pull]
    ; ff = only
