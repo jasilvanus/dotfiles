@@ -18,6 +18,9 @@ lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 
+vim.keymap.set('n', 'L', '<cmd>BufferLineCycleNext<cr>')
+vim.keymap.set('n', 'H', '<cmd>BufferLineCyclePrev<cr>')
+
 -- This command highlights all occurences of the current selection,
 -- also working for multi-line text
 -- Compored to the original version, I added on <cr> at the end to terminate the pending command,
@@ -88,9 +91,14 @@ function Setup_telescope()
     defaults = {
       layout_config = {
         -- Wider window to avoid truncating paths
-        horizontal = { width = 0.9 }
+        horizontal = { width = 0.9},
+        vertical = { width = .9 },
+        width = .9,
+        height = .9
+        -- preview_height = 0.5,
       -- other layout configuration here
       },
+      -- layout_strategy = 'vertical',
       -- Default configuration for telescope goes here:
       -- config_key = value,
       mappings = {
@@ -121,7 +129,6 @@ function Setup_telescope()
     }
   })
 end
-Setup_telescope()
 
 function Setup_null_ls()
   require("null-ls").setup({
@@ -265,6 +272,7 @@ lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.view.width = 50
 lvim.builtin.nvimtree.setup.update_cwd = false
 lvim.builtin.which_key.on_config_done = Setup_which_key
+lvim.builtin.telescope.on_config_done = Setup_telescope
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
