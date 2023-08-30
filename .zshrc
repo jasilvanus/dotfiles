@@ -16,10 +16,6 @@ if [ -z "${SOURCED_DOT_PROFILE}" ]; then
    source ~/.profile
 fi
 
-if [ -e "${HOME}/.zshrc.local" ]; then
-   source "${HOME}/.zshrc.local"
-fi
-
 # low level version compare, used to check if we skip most of this for old zshs
 # Given two version strings, returns the larger of the two.
 # relies on sort -V
@@ -172,6 +168,7 @@ alias tmux-outer="tmux -f .tmux-multi-session.conf -L outer-tmux"
 #################
 
 rlf() { readlink -f ${@}; }
+cdabs() { cd $(readlink -f ${@};) }
 
 pushj() { pushd .; j $@; }
 popj() { popd; }
@@ -205,6 +202,10 @@ j() {
     fi
     cd "$(autojump -s | sort -k1gr | awk '$1 ~ /[0-9]:/ && $2 ~ /^\// { for (i=2; i<=NF; i++) { print $(i) } }' |  fzf --height 40% --reverse --inline-info)"
 }
+
+if [ -e "${HOME}/.zshrc.local" ]; then
+   source "${HOME}/.zshrc.local"
+fi
 
 # powerlevel10k
 if [ -z "${DF_POWERLEVEL}" ]; then
