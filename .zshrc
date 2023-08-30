@@ -165,6 +165,7 @@ alias sudo='sudo ' # allow alias expansion for sudo
 alias time='/usr/bin/time'
 alias tmux_ttys='tmux list-panes -aF "#{pane_tty}, window #{window_index}, pane #{pane_index}"'
 alias vlc='vlc -q'
+alias tmux-outer="tmux -f .tmux-multi-session.conf -L outer-tmux"
 
 #################
 # Functions
