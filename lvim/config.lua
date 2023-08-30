@@ -273,6 +273,9 @@ lvim.builtin.nvimtree.setup.view.width = 50
 lvim.builtin.nvimtree.setup.update_cwd = false
 lvim.builtin.which_key.on_config_done = Setup_which_key
 lvim.builtin.telescope.on_config_done = Setup_telescope
+-- This prevents automatically changing cwd when opening a file in a submodule,
+-- breaking global file search
+lvim.builtin.project.active = false
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
@@ -292,6 +295,7 @@ lvim.builtin.treesitter.ensure_installed = {
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
+lvim.builtin.treesitter.indent = { enable = false }
 
 
 -- Custom settings
