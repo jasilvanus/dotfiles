@@ -32,6 +32,14 @@ xnoremap <silent> <cr> "xy:silent! let searchTerm = '\V'.substitute(escape(@x, '
 -- Original version:
 -- xnoremap <silent> <cr> "*y:silent! let searchTerm = '\V'.substitute(escape(@*, '\/'), "\n", '\\n', "g") <bar> let @/ = searchTerm <bar> echo '/'.@/ <bar> call histadd("search", searchTerm) <bar> set hls<cr>
 
+-- Telescope buffer find has an issue that it does not
+-- switch to insert mode in the dialog. this function
+-- is a wrapper fixing that
+function MyTelescopeBufferFind()
+  vim.cmd('Telescope buffers previewer=false')
+  vim.cmd('call feedkeys("i")')
+end
+
 -- Copy to system clipboard bindings. Note: Requires xclip utility
 -- Note that we cannot do stuff directly here, but instead define a function
 -- that is called once the plugin has been loaded. Due to lazy loading,
@@ -61,6 +69,9 @@ function Setup_which_key()
       m = { ":setlocal foldmethod=manual<CR>", "manual" },
       i = { ":setlocal foldmethod=indent<CR>", "indent" },
       p = { ":setlocal foldexpr=(getline(v:lnum)=~@/)?0:1 foldmethod=expr foldlevel=0 foldcolumn=2 foldminlines=0<CR>", "current search pattern" },
+    },
+    b = {
+      f = { ":lua MyTelescopeBufferFind()<CR>", "Find" }, -- wrapper fixing insert mode
     },
     g = {
       B = { ":Git blame<CR>", "Full git blame" },
