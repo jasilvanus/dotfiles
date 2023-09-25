@@ -10,6 +10,7 @@
 
 import argparse
 import subprocess
+import time
 
 def get_args():
     parser = argparse.ArgumentParser()
@@ -31,28 +32,35 @@ def get_args():
     parser.add_argument("--accept-multi-matches", "-amm", action="store_true",
                         help="If a name search yields multiple results, we normally abort."
                         "With this flag, we instead apply the result to all matches.")
+    parser.add_argument("--delay-exit", "-de", action="store_true",
+                        help="Delay exiting the process by a few milliseconds. Useful when "
+                        "binding this in KDE which chokes on processes finishing too quickly when trying to apply cgroup settings.")
     return parser.parse_args()
 
-def run_xdotool(cmd, window_id=None):
+def run_xdotool(cmd, window_id=None, verbose=False):
     cmd = f"xdotool {cmd}"
     if window_id is not None:
         cmd += f" {window_id}"
+    if verbose:
+        print(f"Running command: \"{cmd}\"")
     try:
         return subprocess.check_output(cmd, shell=True)
     except:
         print(f"Cmd {cmd} failed.")
         raise
 
-def get_active_window_id():
-    result = run_xdotool("getactivewindow", "")
+def get_active_window_id(verbose=False):
+    result = run_xdotool("getactivewindow", "", verbose=verbose)
     try:
         return int(result)
     except:
         print(f"Failed to aquire window id. Result: {result}.")
         raise RuntimeError(result)
 
-def get_window_ids_by_name(name):
+def get_window_ids_by_name(name, verbose=False):
     cmd = f"xdotool search --name \"{name}\""
+    if verbose:
+        print(f"Running command: \"{cmd}\"")
     try:
         result = subprocess.check_output(cmd, shell=True)
     except:
@@ -65,20 +73,20 @@ def get_window_ids_by_name(name):
         print(f"Failed to aquire window id. Command: {cmd}, result: {result}.")
         raise RuntimeError(result)
 
-def run_activate(window_id):
-    run_xdotool("windowactivate", window_id)
+def run_activate(window_id, verbose=False):
+    run_xdotool("windowactivate", window_id, verbose=verbose)
 
-def run_minimize(window_id):
-    run_xdotool("windowminimize", window_id)
+def run_minimize(window_id, verbose=False):
+    run_xdotool("windowminimize", window_id, verbose=verbose)
 
 def run_toggle_active_minimized(window_id, verbose=False):
-    active_window_id = get_active_window_id()
+    active_window_id = get_active_window_id(verbose=verbose)
     if verbose:
         print(f"Active window: {active_window_id}, target window: {window_id}")
     if active_window_id == window_id:
-        run_minimize(window_id)
+        run_minimize(window_id, verbose=verbose)
     else:
-        run_activate(window_id)
+        run_activate(window_id, verbose=verbose)
 
 def run_with_window_id(args, target_window_id):
     if args.activate:
@@ -89,7 +97,7 @@ def run_with_window_id(args, target_window_id):
         run_toggle_active_minimized(target_window_id, verbose=args.verbose)
 
 def run(args):
-    target_window_ids = get_window_ids_by_name(args.name)
+    target_window_ids = get_window_ids_by_name(args.name, args.verbose)
     if len(target_window_ids) == 0:
         raise RuntimeError(f"Failed to find any window with given name")
     elif len(target_window_ids) == 1:
@@ -100,6 +108,8 @@ def run(args):
                 run_with_window_id(args, wid)
         else:
             raise RuntimeError(f"Name match returned multiple results. Refine or use --accept_multi_matches.")
+    if args.delay_exit:
+        time.sleep(0.1)
 
 def _main():
     args = get_args()
