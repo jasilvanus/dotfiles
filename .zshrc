@@ -61,24 +61,6 @@ setopt    sharehistory      #Share history across terminals
 setopt    incappendhistory  #Immediately append to the history file, not just when a term is killed
 setopt    hist_ignore_all_dups #Ignore duplicates in history
 
-up-line-or-local-history() {
-    zle set-local-history 1
-    zle up-line-or-history
-    zle set-local-history 0
-}
-zle -N up-line-or-local-history
-down-line-or-local-history() {
-    zle set-local-history 1
-    zle down-line-or-history
-    zle set-local-history 0
-}
-zle -N down-line-or-local-history
-
-bindkey '^[OA' up-line-or-local-history     # Cursor up
-bindkey '^[OB' down-line-or-local-history   # Cursor down
-# bindkey '^[[1;5A' up-line-or-local-history    # [CTRL] + Cursor up
-# bindkey '^[[1;5B' down-line-or-local-history  # [CTRL] + Cursor down
-
 # Other config
 
 setopt autocd
