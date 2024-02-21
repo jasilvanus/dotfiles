@@ -212,7 +212,7 @@ function Setup_illuminate()
   end
 Setup_illuminate()
 
-require('leap').add_default_mappings()
+-- require('leap').add_default_mappings()
 
 -- Virtual text enable/disable/toggle functions
 -- I could not find a way to query the current state,
@@ -355,6 +355,7 @@ vim.cmd('match ExtraWhitespace /\\s\\+$/')
 -- Note: tmux can be configured to send these upon active pane switches
 vim.cmd([[
   autocmd FocusGained * checktime
+  autocmd FocusLost * :wa
 ]])
 
 -- Avoid repositioning of current line when switching buffers, as it makes
@@ -465,7 +466,7 @@ lvim.plugins = {
     -- This is conditionally enabled for certain FTs, because usually lvim already does it
     {"RRethy/vim-illuminate"},
     {"beyondmarc/hlsl.vim"},
-    {"ggandor/leap.nvim"},
+    -- {"ggandor/leap.nvim"},
     {"junegunn/fzf"},
     {"junegunn/fzf.vim"},
     -- {"folke/tokyonight.nvim"},
