@@ -63,6 +63,7 @@
 
 [core]
 	excludesfile = ~/.gitignore_global
+	editor = vim
 [user]
 	email = jasilvan@users.noreply.github.com
 	name = Jannik Silvanus
