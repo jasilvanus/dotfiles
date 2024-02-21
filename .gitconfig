@@ -32,6 +32,7 @@
    sw = sw
    camno = commit --amend --no-edit
    swfzf = "!git switch $(git branch | fzf)"
+   stale-branches = "!git branch -vv | grep ': gone]' | tr -s ' ' | awk '{print $1}'"
 
 [pull]
    ; ff = only
