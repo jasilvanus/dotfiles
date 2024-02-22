@@ -24,15 +24,21 @@
    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
 
 [alias]
+   br = branch
+   cam   = commit --amend
+   camno = commit --amend --no-edit
+   co = checkout
    merge-ff = merge --ff-only
    rbi = rebase -i --autosquash --autostash
-   s = status
-   sl = status .
    rs = restore
-   sw = sw
-   camno = commit --amend --no-edit
-   swfzf = "!git switch $(git branch | fzf)"
+   s = status
+   sis = status --ignore-submodules
+   sl = status .
    stale-branches = "!git branch -vv | grep ': gone]' | tr -s ' ' | awk '{print $1}'"
+   sw = switch
+   swf = "!git switch $(git branch | fzf)"
+   swfa = "!git switch $(git branch -a | fzf)"
+   swfzf = "!git switch $(git branch | fzf)"
 
 [pull]
    ; ff = only
