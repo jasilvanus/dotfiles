@@ -7,7 +7,6 @@ export EDITOR="nvim -u NONE"
 export VISUAL=${EDITOR}
 export LANG=en_US.UTF-8
 export GREP_COLORS=""
-export LD_LIBRARY_PATH="${HOME}/software/lib64:${LD_LIBRARY_PATH}"
 export BROWSER=/usr/bin/google-chrome-stable
 export TERMINAL=/usr/bin/konsole
 export P4CONFIG=".p4config"
