@@ -484,11 +484,12 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
 -- The highlight link is a hack to get it to work, setting in the config
 -- function does not work for some reason. I only need it for llvm for the time being.
 vim.cmd([[
-autocmd FileType llvm set iskeyword+=%
-autocmd FileType llvm set iskeyword+=!
-autocmd FileType llvm set iskeyword+=.
-autocmd FileType llvm set iskeyword+=#
-autocmd FileType llvm set tw=1000
+autocmd FileType llvm setlocal iskeyword+=%
+autocmd FileType llvm setlocal iskeyword+=!
+autocmd FileType llvm setlocal iskeyword+=.
+autocmd FileType llvm setlocal iskeyword+=#
+autocmd FileType llvm setlocal fo-=t
+autocmd FileType llvm setlocal fo-=c
 autocmd FileType llvm hi link illuminatedWord LspReferenceText
 ]])
 
