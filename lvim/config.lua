@@ -488,6 +488,7 @@ autocmd FileType llvm set iskeyword+=%
 autocmd FileType llvm set iskeyword+=!
 autocmd FileType llvm set iskeyword+=.
 autocmd FileType llvm set iskeyword+=#
+autocmd FileType llvm set tw=1000
 autocmd FileType llvm hi link illuminatedWord LspReferenceText
 ]])
 
