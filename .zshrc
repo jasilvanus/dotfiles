@@ -90,6 +90,22 @@ bindkey -M vicmd '^x^e' edit-command-line
 bindkey "^[[1;5D" backward-word
 bindkey "^[[1;5C" forward-word
 
+function up-local-history () {
+        zle set-local-history 1
+        zle up-history
+        zle set-local-history 0
+}
+zle -N up-local-history
+function down-local-history () {
+        zle set-local-history 1
+        zle down-history
+        zle set-local-history 0
+}
+zle -N down-local-history
+
+bindkey "^[OA" up-local-history
+bindkey "^[OB" down-local-history
+
 # bind alt-arrow to move-word-until-non-alpha
 backward-dir () {
    local WORDCHARS=${WORDCHARS/\/}
