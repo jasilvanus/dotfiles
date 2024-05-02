@@ -469,7 +469,7 @@ lvim.plugins = {
     -- {"ggandor/leap.nvim"},
     {"junegunn/fzf"},
     {"junegunn/fzf.vim"},
-    -- {"folke/tokyonight.nvim"},
+    {"folke/tokyonight.nvim"},
     -- {
     --   "folke/trouble.nvim",
     --   cmd = "TroubleToggle",
