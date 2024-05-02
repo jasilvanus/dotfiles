@@ -65,6 +65,7 @@ setopt    hist_ignore_all_dups #Ignore duplicates in history
 
 setopt autocd
 setopt interactivecomments
+setopt rmstarsilent # Don't prompt on rm -f *some*pattern*containing*wildcards*
 # no beeps
 unsetopt beep
 
