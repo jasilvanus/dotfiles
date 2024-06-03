@@ -1,4 +1,5 @@
 bind main R !git rebase --autostash --autosquash -i %(commit)^
+bind main U !git revert  %(commit)
 bind main F !git commit --fixup %(commit)
 bind main C !git checkout %(commit)
 bind main Y !sh -c "git rev-parse --short %(commit) | tr \"\\n\" \" \" | xclip -selection c && echo Copied $(git rev-parse --short %(commit)) to clipboard"
