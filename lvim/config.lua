@@ -85,6 +85,14 @@ function Setup_which_key()
       v = { ":lua DiagnosticVirtualTextToggle()<CR>", "Toggle virtual text" },
       -- F = { ":lua print(5)<CR>", "Run git-format on local changes1" },
     },
+    L = {
+      s = {
+        name = "ColorScheme",
+        o = { ":colorscheme onedarker<CR>", "onedarker" },
+        d = { ":colorscheme tokyonight-day<CR>", "tokyonight-day" },
+        n = { ":colorscheme tokyonight<CR>", "tokyonight" },
+      }
+    },
   -- Note: by default, the q binding force-quits without saving, which may be dangerous
     q = { ":q<CR>", "quit" },
     Q = { ":q!<CR>", "quit (force)" },
