@@ -1,4 +1,3 @@
-import = ["/home/silvanus/.alacritty.local.toml"]
 theme = "One-Dark"
 
 [colors.bright]
@@ -31,3 +30,6 @@ key = "F11"
 
 [window]
 decorations = "none"
+
+[general]
+import = ["/home/silvanus/.alacritty.local.toml"]
